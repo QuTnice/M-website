@@ -1,0 +1,8 @@
+<div class="i-city">
+    <div class="city-name"  data-to="CityList">北京</div>
+</div>
+<div class="item-biaoti">
+
+    <div class="tab-item active hot">正在热映</div>
+    <div class="tab-item coming">即将上映</div>
+</div>

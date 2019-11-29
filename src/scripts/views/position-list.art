@@ -1,0 +1,29 @@
+{{each list}}
+<li class="list-item" data-id="{{$value.id}}">
+  <img src="{{$value.img.replace(/w\.h/,"128.108") }}" alt="">
+
+  <div class="item-desc">
+    <span class="item-title">{{$value.nm}}</span>
+    <p class="item-info">
+      <span class="item-pos">
+
+        淘票票评分&nbsp;
+      </span>
+      <span class="item-grade">
+        {{0-(-$value.sc)?0-(-$value.sc):$value.wish}}
+      </span>
+    </p>
+    <p class="brief"> 导演：陈凯歌 张一白 管虎 薛晓路 </p>
+    <p class="brief"> 主演：{{$value.star}} </p>
+    <!-- <div class="fantastic">
+      <i class="tpp-fun">一周最热</i>
+      <i class="tpp-best">口碑最佳</i>
+    </div> -->
+  </div>
+  <div class="item-salary">
+    <div class="buy">购票</div>
+    <p class="low-price">特惠</p>
+  </div>
+
+</li>
+{{/each}}

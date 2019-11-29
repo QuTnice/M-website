@@ -1,0 +1,6 @@
+    {{each filterRes.subItems}}
+    <div class="listqqq" data-id="{{$value.id}}">
+        <span class="item-name">{{$value.name}}</span>
+        <span class="item-count">({{$value.count}})</span>
+    </div>
+    {{/each}}

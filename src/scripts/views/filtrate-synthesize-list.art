@@ -1,0 +1,6 @@
+{{each filterRes}}
+<div class="synthesize-list" data-id="{{$value.id}}">
+    <span>{{$value.name}}</span>
+    <span class="count">{{$value.count}}</span>
+</div>
+{{/each}}

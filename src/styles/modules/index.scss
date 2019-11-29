@@ -1,0 +1,99 @@
+.index-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  header {
+    display: flex;
+    height: .49rem;
+    background: #fff;
+    font-size: .18rem;
+    text-align: center;
+    line-height: .49rem;
+    justify-content: space-between;
+
+    color: #fff;
+    .i-city {
+      display: flex;
+      flex: 4;
+      width: 1.75rem;
+      height: .49rem;
+      text-align: left;
+      background-size: 25px;
+      background-repeat: no-repeat;
+      background-position:15px;
+      background-image: url(//gw.alicdn.com/tfs/TB1mKkzl9zqK1RjSZFpXXakSXXa-50-50.svg);
+      padding-left: 50px;
+    }
+
+    .city-name {
+      display: flex;
+      width: auto;
+      height: .49rem;
+      color: #333;
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .item-biaoti {
+      display: flex;
+      flex: 8;
+      width: 2.18rem;
+      .tab-item {
+
+        width: auto;
+        padding: 0 .15rem;
+        height: .49rem;
+        color: #777;
+        font-weight: 700;
+        line-height: .49rem;
+        font-size: 16px;
+      }
+      .active{
+        color: #ff2e62;
+        @include border( 0 0 4px 0, #ff2e62);
+
+      }
+    
+    }
+  }
+
+  main {
+    flex: 1;
+    // overflow-x: hidden;
+    overflow: hidden;
+    background: #fff;
+  }
+
+  footer {
+    height: .54rem;
+
+    ul {
+      height: 100%;
+      display: flex;
+
+      li {
+        padding-top: 0.05rem;
+        flex: 1;
+        flex-direction: column;
+        background: #f6f6f6;
+        text-align: center;
+        // line-height: .44rem;
+        font-size: .12rem;
+        display: flex;
+        // align-items: center;
+        // justify-content: center;
+        color: #c2cfcc;
+
+        span {
+          font-size: .30rem;
+          line-height: .3rem
+        }
+
+        &.active {
+          background: #fff;
+          color: #ff4d64;
+        }
+      }
+    }
+  }
+}

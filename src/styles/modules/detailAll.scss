@@ -1,0 +1,369 @@
+.detailHea{
+    width: 100%;
+    height: 49px;
+    display: flex;
+    // text-align: center;
+    span{
+
+        color: #E54847;
+    }
+    .icon{
+        width: 0.52rem;
+        height: 100%;
+        text-align: center;
+    }
+    .title{
+        width: 2.7rem;
+        height: 100%;
+        text-align: center;
+    }
+}
+.detailBox{
+    display: flex;
+    flex-direction: row;
+    padding: 19px 10px 19px 15px;
+    // padding-top: .19rem;
+    // // padding-left: .15rem;
+    // padding-bottom: .19rem;
+    // padding-right: .2rem;
+    // background: transparent url(//p0.meituan.net/148.208/movie/4c01895cfd53e82f7c3048c407974a6b4739229.jpg);
+    background: cornflowerblue;
+    background-size: 500px 500px;
+    .detailContent{
+        display: flex;
+        flex-direction: column;
+    }
+    .wrap{
+      display: flex;
+      flex: 0;
+      justify-content: space-between;
+    }
+    .detailImg{
+        img{
+            width: 110px;
+            height: 150px;
+        }
+    }
+    .detailContent{
+        width:1.8rem;
+        margin-left: 12.5px;
+        .nm{
+            line-height: 20px;
+            font-size: 20px;
+            margin-top: 2px;
+            font-weight: 700;
+            overflow: hidden;
+        }
+        .enNm{
+            line-height: 11px;
+            font-size: 11px;
+            margin-top: 10px;
+        }
+        .grade{
+            margin-top: 11px;
+            line-height: 18px;
+            .score{
+                color: #fc0;
+                font-size: 18px;
+                font-weight: 700;
+            }
+        }
+        .kind,.area,.time{
+            font-size: 12px;
+            line-height: 12px;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+        
+    }
+    .detailArrow{
+      padding-right: .1rem;
+        display: flex;
+        flex: 1;
+        align-items: center;
+        justify-content:center;
+        font-size: 30px;
+    }
+}
+.cinemaList {
+    @include border(1px 0 0 0, #e8e8e8);
+  
+    ul {
+      background-color: #fff;
+      // padding: 0 10px;
+  
+      li {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 10px 0;
+        overflow: hidden;
+  
+        .cinema {
+          @media screen and (max-width: 375px) {
+            font-size: 18px;
+          }
+  
+          @media screen and (min-width: 376px)and(max-width: 450px) {
+            font-size: 21px;
+          }
+  
+          @media screen and (min-width: 451px)and(max-width: 699px) {
+            font-size: 28px;
+          }
+  
+          @media screen and (min-width: 700px) and(max-width: 900px) {
+            font-size: 34px;
+          }
+  
+          @media screen and (min-width: 901px) {
+            font-size: 39px;
+          }
+  
+          display: flex;
+          justify-content: space-between;
+          @include ellipsis(null, 1);
+          width:100%;
+  
+          .number {
+            color: red;
+            font-size: .16rem;
+          }
+  
+          .yuanFont {
+            font-size: .1rem;
+            color: red;
+          }
+  
+          .qiFont {
+            font-size: .1rem;
+            color: #999;
+          }
+        }
+  
+        .addr {
+          display: flex;
+          justify-content: space-between;
+  
+          .position {
+            font-size: 0.14rem;
+            color: #666;
+            @include ellipsis(null, 1);
+            width: 100%;
+  
+            @media screen and (max-width: 375px) {
+              font-size: 15px;
+            }
+  
+            @media screen and (min-width: 376px)and(max-width: 450px) {
+              font-size: 16px;
+            }
+  
+            @media screen and (min-width: 451px)and(max-width: 699px) {
+              font-size: 20px;
+            }
+  
+            @media screen and (min-width: 700px) and(max-width: 900px) {
+              font-size: 25px;
+            }
+  
+            @media screen and (min-width: 901px) {
+              font-size: 29px;
+            }
+          }
+  
+          .distance {
+            padding-left: 5px;
+          }
+        }
+  
+        .status {
+          @include ellipsis(null, 1);
+          width: 100%;
+  
+          .blueBorder {
+            padding: 1px;
+            margin-right: 5px;
+            //border: 1px solid #A4D5FA;
+            color: #1394f3;
+            border: 1px solid #A4D5FA;
+            font-size: .1rem;
+          }
+  
+          .yellowBorder {
+            padding: 1px;
+            margin-right: 5px;
+            //border: 1px solid #A4D5FA;
+            color: #f90;
+            border: 1px solid #f90;
+            font-size: .1rem;
+          }
+        }
+  
+        .discount {
+          @include ellipsis(null, 1);
+          width: 100%;
+          display: flex;
+          font-size: .1rem;
+          padding-top: 5px;
+          color: #999;
+  
+          .huiFont {
+            background-color: #FF9C1C;
+            color: #fff;
+            width: .15rem;
+            height: .15rem;
+            border-radius: 3px;
+            text-align: center;
+            line-height: .15rem;
+            margin-right: .05rem;
+          }
+        }
+  
+        @include border(0 0 1px 0, #999);
+      }
+    }
+  
+  }
+  .MdetACtive{
+    color: #ff2e62;
+    @include border(0 0 4px 0, #ff2e62);
+
+  }
+
+
+
+
+    .wrap222 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      padding: 10px 10px;
+      overflow: hidden;
+
+      .cinema {
+        @media screen and (max-width: 375px) {
+          font-size: 18px;
+        }
+
+        @media screen and (min-width: 376px)and(max-width: 450px) {
+          font-size: 21px;
+        }
+
+        @media screen and (min-width: 451px)and(max-width: 699px) {
+          font-size: 28px;
+        }
+
+        @media screen and (min-width: 700px) and(max-width: 900px) {
+          font-size: 34px;
+        }
+
+        @media screen and (min-width: 901px) {
+          font-size: 39px;
+        }
+
+        display: flex;
+        justify-content: space-between;
+        @include ellipsis(null, 1);
+        width:100%;
+
+        .number {
+          color: red;
+          font-size: .16rem;
+        }
+
+        .yuanFont {
+          font-size: .1rem;
+          color: red;
+        }
+
+        .qiFont {
+          font-size: .1rem;
+          color: #999;
+        }
+      }
+
+      .addr {
+        display: flex;
+        justify-content: space-between;
+
+        .position {
+          font-size: 0.14rem;
+          color: #666;
+          @include ellipsis(null, 1);
+          width: 100%;
+
+          @media screen and (max-width: 375px) {
+            font-size: 15px;
+          }
+
+          @media screen and (min-width: 376px)and(max-width: 450px) {
+            font-size: 16px;
+          }
+
+          @media screen and (min-width: 451px)and(max-width: 699px) {
+            font-size: 20px;
+          }
+
+          @media screen and (min-width: 700px) and(max-width: 900px) {
+            font-size: 25px;
+          }
+
+          @media screen and (min-width: 901px) {
+            font-size: 29px;
+          }
+        }
+
+        .distance {
+          padding-left: 5px;
+        }
+      }
+
+      .status {
+        @include ellipsis(null, 1);
+        width: 100%;
+
+        .blueBorder {
+          padding: 1px;
+          margin-right: 5px;
+          //border: 1px solid #A4D5FA;
+          color: #1394f3;
+          border: 1px solid #A4D5FA;
+          font-size: .1rem;
+        }
+
+        .yellowBorder {
+          padding: 1px;
+          margin-right: 5px;
+          //border: 1px solid #A4D5FA;
+          color: #f90;
+          border: 1px solid #f90;
+          font-size: .1rem;
+        }
+      }
+
+      .discount {
+        @include ellipsis(null, 1);
+        width: 100%;
+        display: flex;
+        font-size: .1rem;
+        padding-top: 5px;
+        color: #999;
+
+        .huiFont {
+          background-color: #FF9C1C;
+          color: #fff;
+          width: .15rem;
+          height: .15rem;
+          border-radius: 3px;
+          text-align: center;
+          line-height: .15rem;
+          margin-right: .05rem;
+        }
+      }
+
+      @include border(0 0 1px 0, #999);
+    }
+  
+  

@@ -1,0 +1,57 @@
+
+.headerIconfont{
+    font-size: .01rem;
+}
+
+#headerList{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: .14rem;
+    height: .49rem;
+    line-height: .49rem;
+    color: #000;
+    .region{
+        flex: 4;
+        display: flex;
+        .logo{
+            margin-left: 10px;
+           img{
+               width: .25rem;
+               height: .25rem;
+           }
+        }
+        .activeCity{
+            margin-left: 5px;
+            color: #8A869E;
+        }
+    }
+    .allCity{
+        flex: 3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: .49rem;
+        line-height: .49rem;
+        color: #000;
+        .sanjiao{
+            width: 4px;
+            height: 5px;
+            margin-left: 5px;
+        }
+    }
+    .comprehensive{
+        flex: 3;
+        color: #000;
+    }
+    .characteristic{
+        flex: 3;
+      ;
+    }
+    .search{
+        flex: 2;
+        text-align: center;
+        font-size: .18rem;
+    }
+}

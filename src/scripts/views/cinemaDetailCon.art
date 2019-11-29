@@ -1,0 +1,38 @@
+<div class="bodyWrap">
+    <div class="C-detail-Top">
+        <div class="cinema-info">
+            <div class="title line-ellipsis"></div>
+            <div class="location line-ellipsis"></div>
+        </div>
+        <div class="cinema-location">
+            <div class="location-icon yo-ico">&#xe610;</div>
+        </div>
+    </div>
+    <div class="img-nm">
+        <div class="img-swiper">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    {{each cinemaDetailResult.showData.movies }}
+                    <div class="swiper-slide">
+                        <img src="{{$value.img.replace(/w\.h/,"128.108")}}" alt="">
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="movie-info">
+        <div class="movie-title">
+            <span class="title"></span>
+            <span class="sc">9.7</span>
+        </div>
+        <div class="movie-desc">111分钟 | 剧情 | 张涵予,欧豪,杜江</div>
+    </div>
+</div>
+<div class="movie-date">
+    
+</div>
+<div class="movie-List">
+
+</div>

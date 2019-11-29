@@ -1,0 +1,9 @@
+<div class="C-movie-Date">
+    <div class="swiper-container1">
+        <div class="swiper-wrapper " style="overflow: auto;">
+            {{each dateList.shows}}
+            <div class="swiper-slide swiper-page ">{{$value.dateShow}}</div>
+            {{/each}}
+        </div>
+    </div>
+</div>

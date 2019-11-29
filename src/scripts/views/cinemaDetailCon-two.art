@@ -1,0 +1,26 @@
+<ul class="sessionList">
+    {{each sessionL}}
+    <li class="session">
+        <div class="wrap1">
+            <div class="timeblock">
+                <span class="openTime">{{$value.tm}}</span>
+                <span class="breaks">22.15&nbsp;散场</span>
+            </div>
+            <div class="infoblock">
+                <span class="language">{{$value.lang}}</span>
+                <span class="twoD">{{$value.tp}}</span>
+                <span class="movieHall">{{$value.th}}</span>
+            </div>
+        </div>
+        <div class="wrap2">
+            <div class="priceblock">
+                <span class="price">￥{{0-(-$value.vipPrice)?0-(-$value.vipPrice):38}}</span>
+                <span class="discount">{{$value.vipPriceName}}首单特惠</span>
+            </div>
+            <div class="buttonblcok">
+                <div class="buyButton">购票</div>
+            </div>
+        </div>
+    </li>
+    {{/each}}
+</ul>

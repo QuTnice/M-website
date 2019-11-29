@@ -1,0 +1,175 @@
+.list-container {
+  overflow: hidden;
+  .head,
+  .foot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+  }
+
+  .head img,
+  .foot img {
+    width: .16rem;
+    height: .16rem;
+    transition: transform 150ms;
+    -webkit-transition: transform 150ms;
+  }
+
+  .head img {
+    transform: rotate(180deg);
+  }
+
+  .up {
+    transform: rotate(360deg) !important;
+    -webkit-transform: rotate(360deg) !important;
+  }
+
+  .down {
+    transform: rotate(180deg);
+  }
+
+
+  ul {
+    background: #fff;
+
+    li.list-item {
+      display: flex;
+      flex-direction: row;
+      overflow: hidden;
+      justify-content: space-between;
+      padding: .20rem .20rem .20rem .15rem;
+      vertical-align: top;
+      @include border(1px 0 0 0, #e8e8e8);
+
+      img {
+        width: .71rem;
+        height: 1.04rem;
+        // padding-right: .15rem;
+      }
+
+      .item-desc {
+        flex: 5;
+        display: flex;
+        flex-direction: column;
+        width: 2.6rem;
+        padding: 0 .11rem;
+        overflow: hidden;
+        .brief {
+          color: #666;
+          font-size: .13rem;
+          margin-top: 0.03rem;
+          width: auto;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          font-weight: 500;
+          @media screen and (max-width: 375px){
+            @include ellipsis(null ,1);
+          }
+
+          width: 100%;
+        }
+
+
+        .item-title {
+          @media screen and (max-width: 375px){
+            font-size: 16px;
+          }
+          @media screen and (min-width: 376px){
+            font-size: 18px;
+          }
+          font-weight: bold;
+          line-height: .2rem;
+          @include ellipsis(null, 1);
+          width: 100%;
+
+        }
+
+        .fantastic {
+          height: .15rem;
+          margin-top: .05rem;
+          font-size: .13rem;
+
+          .tpp-fun {
+            display: inline-block;
+            width: auto;
+            color: #ff9c1c;
+            @include border(1px 1px 1px 1px, #ff9c1c);
+            //border: 1px solid #ff9c1c;
+            padding: 0 .03rem;
+            border-radius: 5%;
+            margin-right: .04rem;
+          }
+
+          .tpp-best {
+            display: inline-block;
+            color: #1394f3;
+            @include border(1px 1px 1px 1px, #1394f3);
+            padding: 0 .03rem;
+            border-radius: 5%;
+
+          }
+        }
+
+        .item-info {
+          display: flex;
+
+          .item-pos {
+            // flex: 1;
+            width: auto;
+            // width: .5rem;
+          }
+          .item-grade {
+            flex: 1;
+            color: #ff9c1c;
+            font-size: .14rem;
+          }
+  
+
+        }
+
+        .item-time {
+          font-size: .12rem;
+          color: #888;
+        }
+      }
+
+      .item-salary {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        font-size: .16rem;
+        color: #999;
+        width: .7rem;
+        // text-align: center;
+        justify-content: center;
+
+        .buy {
+          width: .5rem;
+          height: .28rem;
+          background-image: linear-gradient(45deg, #ff47a8, #ff2e62);
+          border-radius: 1.2rem;
+          text-align: center;
+          color: #fff;
+          background-color: transparent;
+          box-sizing: border-box;
+          height: .28rem;
+          line-height: .28rem;
+          padding: 0 .13rem;
+          font-size: .12rem;
+          margin-bottom: 0.056rem;
+          font-weight: 600;
+
+        }
+
+        .low-price {
+          font-size: .11rem;
+          width: .5rem;
+          text-align: center;
+          font-weight: 600
+        }
+      }
+    }
+  }
+}

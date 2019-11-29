@@ -1,0 +1,55 @@
+<div class="filtrate-allCity">
+  <div class="tab-content">
+    <div class="region-tab">
+      <div class="items active">商区</div>
+      <div class="items">地铁站</div>
+    </div>
+    <div class="region-list">
+      <div class="region-sidenav">
+        
+      </div>
+      <div class="region-list-item">
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="filtrate-synthesize">
+  
+</div>
+<div class="filtrate-feature"></div>
+
+
+{{each cinemaList}}
+<li data-id="{{$value.id}}" data-to="Cinemadetail">
+  <div class="cinema">
+    {{ $value.nm }}
+    <div class="prace">
+      <span class="number">{{ $value.sellPrice }}</span><span class="yuanFont">元</span><span class="qiFont">起</span>
+    </div>
+  </div>
+  <div class="addr">
+    <span class="position">{{ $value.addr }}</span>
+    <span class="distance">{{ $value.distance}}</span>
+  </div>
+  <div class="status">
+    <span class="blueBorder">退</span><span class="blueBorder">改签</span><span class="yellowBorder">小吃</span><span
+      style="display:{{ $value.tag.vipTag ? 'inline' : 'none' }}"
+      class="yellowBorder">{{ $value.tag.vipTag ? $value.tag.vipTag : "" }}</span><span
+      style="display:{{ $value.tag.hallTypeVOList[0] ? 'inline' : 'none' }}" class="blueBorder">{{
+      $value.tag.hallTypeVOList[0] ? $value.tag.hallTypeVOList[0].name : ""
+    }}</span><span style="display:{{ $value.tag.hallTypeVOList[1] ? 'inline' : 'none' }}" class="blueBorder">{{
+      $value.tag.hallTypeVOList[1] ? $value.tag.hallTypeVOList[1].name : ""
+    }}</span><span style="display:{{ $value.tag.hallTypeVOList[2] ? 'inline' : 'none' }}" class="blueBorder">{{
+      $value.tag.hallTypeVOList[2] ? $value.tag.hallTypeVOList[2].name : ""
+    }}</span>
+  </div>
+  <div class="discount" style="display:{{ $value.promotion.cardPromotionTag? ' ' : 'none' }}">
+
+    <span class="huiFont" style="display:{{ $value.promotion.cardPromotionTag? ' ' : 'none' }}">卡</span>
+    <span class="discountFont">{{ $value.promotion.cardPromotionTag }}</span>
+
+
+  </div>
+</li>
+{{/each}}

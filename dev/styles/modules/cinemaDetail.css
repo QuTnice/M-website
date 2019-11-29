@@ -1,0 +1,15 @@
+.bodyWrap {
+  display: flex; }
+  .bodyWrap .C-detail-Top {
+    display: flex;
+    width: 100%;
+    height: .73rem; }
+    .bodyWrap .C-detail-Top .cinema-info {
+      display: flex;
+      flex-direction: column;
+      padding: .15rem 0 .15rem .15rem; }
+    .bodyWrap .C-detail-Top .cinema-location {
+      width: 0.71rem;
+      display: flex;
+      align-items: center;
+      justify-content: center; }

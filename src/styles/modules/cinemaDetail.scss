@@ -1,0 +1,289 @@
+.detailHea{
+    display: flex;
+    .title{
+        flex: 1;
+    }
+
+}
+.bodyWrap {
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    background: #fff;
+    @include border( 1px 0 0 0, #e8e8e8);
+    .line-ellipsis{
+        @include ellipsis(null ,1);
+
+    }
+
+
+    .C-detail-Top {
+        display: flex;
+        width: 100%;
+        height: .73rem;
+        align-items: center;
+
+        .cinema-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: .15rem .3rem .15rem .15rem;
+            // width: 3.05rem;
+
+            .title {
+
+                font-size: 17px;
+                line-height: 24px;
+                font-weight: 700;
+            }
+
+            .location {
+                font-size: 13px;
+                line-height: 18.5px;
+                margin-top: 2px;
+                color: #999;
+            }
+        }
+
+        .cinema-location {
+            width: 0.71rem;
+            
+
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 0.3rem;
+            @include border(0 0 0 1px, #999);
+
+        }
+    }
+
+    .img-nm {
+        display: flex;
+        // width: 3.75rem;
+
+        .img-swiper {
+            display: flex;
+            width: 100%;
+            height: 1.35rem;
+            background: cornflowerblue;
+            line-height: 1.35em;
+            padding: 12px 0;
+        }
+
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            /* background: #fff; */
+            width: .75rem !important;
+            height: 1.0924rem;
+
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+            transition: 300ms;
+            transform: scale(0.8);
+
+        }
+
+        .swiper-slide img {
+            height: 1.1rem;
+            width: .75rem;
+            border: 2px solid #fff;
+
+            &::after {
+                content: '';
+                width: 0;
+                height: 0;
+                border: 2px 2px 0 2px solid #fff;
+                background: #000;
+            }
+        }
+
+        .swiper-slide-active,
+        .swiper-slide-duplicate-active {
+            transform: scale(1);
+        }
+
+    }
+
+    .movie-info {
+        width: 100%;
+        height: 0.665rem;
+        padding: 11px 15px;
+        text-align: center;
+
+        .title {
+            font-size: 17px;
+            line-height: 24px;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .sc {
+            color: #ffb400;
+            font-size: 16px;
+            font-weight: 700;
+        }
+    }
+}
+
+    .C-movie-Date {
+        // overflow: hidden;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        @include border( 1px 0 1px 0, #e8e8e8);
+
+
+    }
+    .swiper-page {
+        text-align: center;
+        font-size: 14px;
+        background: #fff;
+        width: .9586rem !important;
+        height: 45px !important;
+        margin: 0 .15rem;
+        // @include border(0 0 4px 0, #f03d37);
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+
+    .timeActive{
+        color: #f03d37 !important; 
+        @include border(0 0 4px 0, #f03d37);
+    }
+
+    .sessionList{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        div{
+            display: inline-block;
+            span{
+                display: block;
+            }
+        }
+        .wrap1,.wrap2{
+            display: flex;
+        }
+        .wrap2{
+            padding-right: .1rem;
+        }
+        .session{
+            display: flex;
+            width: 100%;
+            height: 0.795rem;
+            padding: .17rem 0;
+            // margin-left: .125rem;
+            padding-right: .2rem;
+            padding-left: .225rem;
+            @include border( 0 0 1px 0, #e8e8e8);
+            .wrap1{
+                flex: 1;
+            }
+            .wrap2{
+                justify-content: space-between;
+            }
+        }
+        .timeblock{
+            width: .62rem;
+            .openTime{
+                font-size: .2rem;
+                color: #333;
+                // line-height: 1;
+            }
+            .breaks{
+                font-size: .11rem;
+                color: #333;
+                margin-top: .1rem;
+                // line-height: 1;
+            }
+        }
+        .infoblock{
+            margin-left: .17rem;
+            width: 0.88rem;
+            .language{
+                
+                display: inline-block;
+                line-height: .18rem;
+                font-size: .13rem;
+                color: #333;
+            }
+            .twoD{
+                display: inline-block;
+                line-height: .18rem;
+                font-size: .13rem;
+                color: #333;
+
+            }
+            .movieHall{
+                margin-top: 0.07rem;
+                font-size: 0.11rem;
+                color: #999999;
+            }
+        }
+        .priceblock{
+            width: .8rem;
+            height: 100%;
+            // margin-left: .05rem;
+            .price{
+                font-size: 0.19rem;
+                color: #f03d37;
+            }
+            .discount{
+                font-size: 0.11rem;
+                color: #999999;
+
+            }
+        }
+        .buttonblcok{
+            margin-left: 0.05rem;
+            // width: 0.45rem;
+            height: 100%;
+            line-height: 1;
+            flex: 1;
+            .buyButton{
+                width: 0.45rem;
+                height: .27rem;
+                background: #f03d37;
+                border-radius: 4px;
+                text-align: center;
+                line-height: .27rem;
+                color: #fff;
+            }
+        }
+    }

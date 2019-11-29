@@ -1,0 +1,2964 @@
+@charset "UTF-8";
+/**
+ * Yo框架全局base定义
+ * 本文件与variables不同地方在于，这里所定义的map可以使用在variables和任何地方
+ * lib中map使用“_”开头，本文件中不使用"_"
+ * base ⇌ extra
+ */
+/**
+ * Yo框架全局base定义
+ * 本文件与variables不同地方在于，这里所定义的map可以使用在variables和任何地方
+ * 本文件中map使用"_"开头，extra中不使用"_"
+ * base ⇌ extra
+ */
+/**
+ * 合并base和extra中的同类base map
+ * 用以解决业务方升级Yo时需比base和extra的一致性
+ * 当extra为空时，base map将以base文件里的定义作为默认值
+ * 当extra不为空时，base map使用extra文件里的定义
+ */
+/**
+ * Yo框架全局Variables
+ * Yo基础变量map，如果不想定义某属性，将其value设置为null；
+ * Yo仅使用2种长度单位：px用于边框，rem用于除边框之外的所有地方
+ * variables中map使用“_”开头，本文件中不使用"_"
+ * variables ⇌ config
+ */
+/**
+ * Yo框架全局Variables
+ * Yo基础变量map，如果不想定义某属性，将其value设置为null
+ * Yo仅使用2种长度单位：px用于边框，rem用于除边框之外的所有地方
+ * 本文件中map使用"_"开头，config中不使用"_"
+ * variables ⇌ config
+ */
+/**
+ * 合并variables和config中的同类map
+ * 用以解决业务方升级Yo时需比config和variables的一致性
+ * 当config为空时，使用variables中的map作为默认值
+ * 当config不为空时，使用config中的定义
+ */
+/**
+ * Yo框架自定义全局函数
+ * 扩充Sass默认函数库，用以增强语法
+ */
+/**
+ * @module List扩展函数
+ * @description 返回SassList中的第一项
+ * @function first
+ * @version 2.1.0
+ * @param {String} $list 指定一个Sass List <2.1.0>
+ */
+/**
+ * @module List扩展函数
+ * @description 返回SassList中的最后一项
+ * @function last
+ * @version 2.1.0
+ * @param {String} $list 指定一个Sass List <2.1.0>
+ */
+/**
+ * @module List扩展函数
+ * @description 返回SassList中的倒数第几项
+ * @function nth-last
+ * @version 2.1.0
+ * @param {String} $list 指定一个Sass List <2.1.0>
+ * @param {Integer} $index 指定需要返回的值在list中的倒数位置 <2.1.0>
+ */
+/**
+ * @module List扩展函数
+ * @description 移除SassList中的某个项目并返回新的List
+ * @function remove
+ * @version 2.1.0
+ * @param {String} $list 指定一个Sass List <2.1.0>
+ * @param {String} $value 指定需要被删除的值 <2.1.0>
+ */
+/**
+ * @module List扩展函数
+ * @description 截取SassList中的某个部分并返回新的List
+ * @function slice
+ * @version 2.1.0
+ * @param {String} $list 指定一个Sass List <2.1.0>
+ * @param {Integer} $start 指定需要截取的开始下标 <2.1.0>
+ * @param {Integer} $end 指定需要截取的结束下标（不包括end），当该值缺省时默认为末尾下标 <2.1.0>
+ */
+/**
+ * @module List扩展函数
+ * @description 从SassList中添加/删除项目，然后返回新的List。
+ * @function splice
+ * @version 2.1.0
+ * @param {String} $list 指定一个Sass List <2.1.0>
+ * @param {Integer} $index 指定需要移除的开始下标 <2.1.0>
+ * @param {Integer} $count 指定需要移除的数量，不可以为负值，0表示不移除 <2.1.0>
+ * @param {String} $values 指定需要添加的新值（可以是多个），如果该值缺省，则表示只移除不添加新值 <2.1.0>
+ */
+/**
+ * Yo框架全局基础方法
+ * 包括响应式方案，CSS3兼容性方案，厂商前缀方案，iconfont方案，flex布局等全局方法
+ */
+/**
+ * @module 常用方法
+ * @description 给需要的属性加厂家前缀
+ * @method prefix
+ * @version 1.0.0
+ * @param {String} $property 指定属性 <1.0.0>
+ * @param {String} $value 指定属性值 <1.0.0>
+ * @skip
+ */
+/**
+ * @module 常用方法
+ * @description 定义字体图标
+ * @method _iconfont
+ * @version 1.0.0
+ * @skip
+ */
+/**
+ * @module 常用方法
+ * @description 四则运算(系统要求：iOS6.0+,Android4.4+)
+ * @method calc
+ * @version 1.7.0
+ * @param {String} $property 指定需要进行计算的CSS属性 <1.7.0>
+ * @param {String} $value 与原生CSS语法一致，区别在于需要使用引号包裹表达式 <1.7.0>
+ * @example
+ * .calc {
+ *     @include calc(width, "100% - 100px");
+ * }
+ *
+ * <div class="calc">四则运算</div>
+ */
+/**
+ * @module 常用方法
+ * @description 定义响应式方案
+ * @method responsive
+ * @version 1.0.0
+ * @param {String} $media 指定媒体查询条件，取值为`config`文件map `media-types`中的值 <1.0.0>
+ */
+/**
+ * @module 常用方法
+ * @description 清除浮动方案
+ * @method clearfix
+ * @version 1.0.0
+ * @param {String} $type 指定清除浮动的方式，包括：pseudo-element | bfc，默认值：pseudo-element <1.8.5>
+ */
+/**
+ * @module 常用方法
+ * @description 清除行内级元素间间隙方案
+ * @method clearspace
+ * @version 3.0.3
+ * @param {Length} $font-size 指定子元素字号，默认值：.14rem <3.0.3>
+ * @example
+ * .demo {
+ *     @include clearspace;
+ * }
+ *
+ * <div class="demo">
+ *      <span class="item">1</span>
+ *      <span class="item">2</span>
+ *      <span class="item">3</span>
+ * </div>
+ */
+/**
+ * @module 常用方法
+ * @description 描述元素内容在横、纵方向上的对齐方式，默认为水平垂直居中对齐
+ * @method align
+ * @version 2.0.0
+ * @param {String} $flexbox 元素布局方式，可选值：flex | inline-flex，默认值：flex <2.0.0>
+ * @param {Keyword} $justify-content 元素内容的水平对齐方式，取值与`justify-content`属性一致，默认值：center <2.0.0>
+ * @param {Keyword} $align-items 元素内容的垂直对齐方式，取值与`align-items`属性一致，默认值：center <2.0.0>
+ * @example
+ * .demo {
+ *     @include align;
+ * }
+ *
+ * <div class="demo">
+ *      <img alt="未知尺寸图片居中" />
+ * </div>
+ */
+/**
+ * @module 常用方法
+ * @description 定义是否有滚动条
+ * @method overflow
+ * @version 1.0.0
+ * @param {String} $overflow 取值与最新原生语法一致，默认值：auto <1.0.0>
+ */
+/**
+ * @module 常用方法
+ * @description 生成全屏方法
+ * @method fullscreen
+ * @version 1.7.0
+ * @param {Integer} $z-index 指定层叠级别 <1.7.0>
+ * @param {Keywords} $position 指定定位方式，取除`static | relative`之外的值，默认值：absolute <1.8.5>
+ */
+/**
+ * @module 用户界面
+ * @description 定义使用何种滤镜
+ * @method filter
+ * @version 1.7.0
+ * @param {String} $filter 取值与`filter`属性一致 <1.7.0>
+ */
+/**
+ * @module 用户界面
+ * @description 定义UA默认外观
+ * @method appearance
+ * @version 1.0.0
+ * @param {String} $appearance 取值与`appearance`属性一致，默认值：none <1.0.0>
+ */
+/**
+ * @module 用户界面
+ * @description 定义如何选中内容
+ * @method user-select
+ * @version 1.0.0
+ * @param {String} $user-select 取值与`user-select`属性一致，默认值：none <1.0.0>
+ */
+/**
+ * @module 用户界面
+ * @description 定义盒模型
+ * @method box-sizing
+ * @version 1.0.0
+ * @param {String} $box-sizing 指定盒模型类型，取值与`box-sizing`属性一致，默认值：border-box <1.0.0>
+ */
+/**
+ * @module 背景与边框
+ * @description 定义渐变色值
+ * @method gradient
+ * @version 1.0.0
+ * @param {String} $type 指定渐变的4种类型：linear, repeating-linear, radial, repeating-radial <1.0.0>
+ * @param {String} $dir 指定渐变方向，可选值：[left | right] || [top | bottom] | angle <2.0.0>
+ * @param {String} $gradient 指定渐变取值，与w3c最新原生语法一致 <1.0.0>
+ */
+/**
+ * @module 背景与边框
+ * @description 定义背景图像缩放（AndroidBrowser2.3.*还需要厂商前缀）
+ * @method background-size
+ * @version 1.4.0
+ * @param {Keywords | Length} $background-size 指定背景图缩放值，取值与`background-size`属性一致 <1.4.0>
+ */
+/**
+ * @module 背景与边框
+ * @description 定义背景裁减（AndroidBrowser2.3.*还需要厂商前缀）
+ * @method background-clip
+ * @version 1.6.0
+ * @param {Keywords} $background-clip 指定背景图缩放值，取值与`background-clip`属性一致 <1.6.0>
+ */
+/**
+ * @module 背景与边框
+ * @description 定义背景显示区域（AndroidBrowser2.3.*还需要厂商前缀）
+ * @method background-origin
+ * @version 1.6.0
+ * @param {Keywords} $background-origin 指定背景图`background-position`属性计算相对的参考点，取值与`background-origin`属性一致 <1.6.0>
+ */
+/**
+ * @module 背景与边框
+ * @description 为元素添加边框（包括1px边框）
+ * @method border
+ * @version 2.0.0
+ * @param {String} $border-width 指定边框厚度（单位为px），默认值：1px，取值与`border-width`属性一致，不同方向代表边框位置 <2.0.0>
+ * @param {String} $border-color 指定边框颜色 <2.0.0>
+ * @param {String} $border-style 指定边框样式 <2.0.0>
+ * @param {String} $radius 指定边框圆角半径，默认值：null <2.0.0>
+ */
+/**
+ * @module 背景与边框
+ * @description 定义圆角，用于修复某些安卓机型上“圆角+边框+背景”，背景溢出的情况
+ * @method border-radius
+ * @version 1.6.0
+ * @param {Length} $border-radius 指定元素的圆角半径，取值与`border-radius`属性一致 <1.6.0>
+ */
+/**
+ * @module Transform
+ * @description 定义简单变换
+ * @method transform
+ * @version 1.0.0
+ * @param {String} $transform 取值范围与`transform`属性一致 <1.0.0>
+ */
+/**
+ * @module Transform
+ * @description 定义变换原点
+ * @method transform-origin
+ * @version 1.0.0
+ * @param {Length | Percentage | Keywords} $transform-origin 取值范围与`transform-origin`属性一致 <1.0.0>
+ */
+/**
+ * @module Transform
+ * @description 指定某元素的子元素是（看起来）位于三维空间内，还是在该元素所在的平面内被扁平化
+ * @method transform-style
+ * @version 2.0.0
+ * @param {String} $transform-style 取值范围与`transform-style`属性一致 <2.0.0>
+ */
+/**
+ * @module Transform
+ * @description 指定观察者与「z=0」平面的距离，使具有三维位置变换的元素产生透视效果。「z>0」的三维元素比正常大，而「z<0」时则比正常小，大小程度由该属性的值决定。
+ * @method perspective
+ * @version 2.0.0
+ * @param {none | Length} $perspective 取值范围与`perspective`属性一致 <2.0.0>
+ */
+/**
+ * @module Transform
+ * @description 指定透视点的位置
+ * @method perspective-origin
+ * @version 2.0.0
+ * @param {Length | Percentage | Keywords} $perspective-origin 取值范围与`perspective-origin`属性一致 <2.0.0>
+ */
+/**
+ * @module Transform
+ * @description 指定元素背面面向用户时是否可见
+ * @method backface-visibility
+ * @version 2.0.0
+ * @param {Keywords} $backface-visibility 取值范围与`backface-visibility`属性一致 <2.0.0>
+ */
+/**
+ * @module Animation
+ * @description 定义动画
+ * @method animation
+ * @version 1.0.0
+ * @param {String} $animation 取值与原生语法一致 <1.0.0>
+ */
+/**
+ * @module Animation
+ * @description 指定需要引用的动画名称
+ * @method animation-name
+ * @version 3.0.0
+ * @param {String} $animation-name 取值与原生语法一致 <3.0.0>
+ */
+/**
+ * @module Animation
+ * @description 指定动画运行一次所持续的时长
+ * @method animation-duration
+ * @version 3.0.0
+ * @param {String} $animation-duration 取值与原生语法一致 <3.0.0>
+ */
+/**
+ * @module Animation
+ * @description 指定动画运行方式
+ * @method animation-timing-function
+ * @version 3.0.0
+ * @param {String} $animation-timing-function 取值与原生语法一致 <3.0.0>
+ */
+/**
+ * @module Animation
+ * @description 指定动画延迟多久之后再开始
+ * @method animation-delay
+ * @version 3.0.0
+ * @param {String} $animation-delay 取值与原生语法一致 <3.0.0>
+ */
+/**
+ * @module Animation
+ * @description 指定动画循环几次
+ * @method animation-iteration-count
+ * @version 3.0.0
+ * @param {String} $animation-iteration-count 取值与原生语法一致 <3.0.0>
+ */
+/**
+ * @module Animation
+ * @description 指定动画的运动方向
+ * @method animation-direction
+ * @version 3.0.0
+ * @param {String} $animation-direction 取值与原生语法一致 <3.0.0>
+ */
+/**
+ * @module Animation
+ * @description 指定动画的运动状态
+ * @method animation-play-state
+ * @version 3.0.0
+ * @param {String} $animation-play-state 取值与原生语法一致 <3.0.0>
+ */
+/**
+ * @module Animation
+ * @description 指定动画时间之外的状态
+ * @method animation-fill-mode
+ * @version 3.0.0
+ * @param {String} $animation-fill-mode 取值与原生语法一致 <3.0.0>
+ */
+/**
+ * @module Transition
+ * @description 定义补间
+ * @method transition
+ * @version 1.0.0
+ * @param {String} $transition 取值与原生语法一致 <1.0.0>
+ */
+/**
+ * @module Flexbox
+ * @description 定义显示类型为伸缩盒
+ * @method flexbox
+ * @version 1.0.0
+ * @param {String} $flexbox 默认值：flex，可选值：flex | inline-flex <1.0.0>
+ */
+/**
+ * @module Flexbox
+ * @description 定义伸缩盒子元素如何分配空间
+ * @method flex
+ * @version 1.0.0
+ * @param {Number} $flex 取值与`flex`属性一致，默认值：1 <1.0.0>
+ * @param {String} $direction 默认值: row，可选值：row | column <1.5.0>
+ */
+/**
+ * @module Flexbox
+ * @description 定义伸缩盒子元素的排版顺序
+ * @method order
+ * @version 1.0.0
+ * @param {Integer} $order 取值与`order`属性一致，默认值：1 <1.0.0>
+ */
+/**
+ * @module Flexbox
+ * @description 定义弹性盒子元素流动方向及遇见边界时是否换行(要求系统：iOS7.0+, Android4.4+)
+ * @method flex-flow
+ * @version 2.0.0
+ * @param {String} $flex-flow 取值与`flex-flow`属性一致，默认值：row nowrap <2.0.0>
+ */
+/**
+ * @module Flexbox
+ * @description 定义伸缩盒子元素的流动方向
+ * @method flex-direction
+ * @version 1.0.0
+ * @param {String} $flex-direction 取值与`flex-direction`属性一致，默认值：row <1.0.0>
+ */
+/**
+ * @module Flexbox
+ * @description 定义弹性盒子元素溢出后排版(要求系统：iOS7.0+, Android4.4+)
+ * @method flex-wrap
+ * @version 1.0.0
+ * @param {String} $flex-wrap 取值与`flex-wrap`属性一致，默认值：nowrap <1.0.0>
+ */
+/**
+ * @module Flexbox
+ * @description 定义弹性容器主轴对齐方式(其中`space-around`值需要iOS7.0+,Android4.4+)
+ * @method justify-content
+ * @version 1.0.0
+ * @param {String} $justify-content 取值与`justify-content`属性一致，默认值：center <1.0.0>
+ */
+/**
+ * @module Flexbox
+ * @description 定义多行弹性容器侧轴对齐方式(要求系统：iOS7.0+,Android4.4+)
+ * @method align-content
+ * @version 1.8.5
+ * @param {String} $align-content 取值与`align-content`属性一致，默认值：center <1.8.5>
+ */
+/**
+ * @module Flexbox
+ * @description 定义单行弹性容器侧轴对齐方式
+ * @method align-items
+ * @version 1.0.0
+ * @param {String} $align-items 取值与`align-items`属性一致，默认值：center <1.0.0>
+ */
+/**
+ * @module Flexbox
+ * @description 定义弹性容器中子元素自身的在侧轴对齐方式(要求系统：iOS7.0+,Android4.4+)
+ * @method align-self
+ * @version 1.0.0
+ * @param {String} $align-self 取值与`align-self`属性一致，默认值：center <1.0.0>
+ */
+/**
+ * @module 形状
+ * @description 生成矩形方法
+ * @method rect
+ * @version 1.0.0
+ * @param {Length} $width 定义矩形的长度 <1.0.0>
+ * @param {Length} $height 定义矩形的高度 <1.0.0>
+ */
+/**
+ * @module 形状
+ * @description 生成正方形方法
+ * @method square
+ * @version 1.0.0
+ * @param {Length} $size 定义正方形的边长 <1.0.0>
+ */
+/**
+ * @module 形状
+ * @description 生成圆形方法
+ * @method circle
+ * @version 1.0.0
+ * @param {Length} $size 定义圆的半径长度 <1.0.0>
+ * @param {Length} $radius 定义圆的圆角半径长度 <1.0.0>
+ */
+/**
+ * @module 常用方法
+ * @description 在自适应宽度情况下，确保内容元素的宽高比固定，比如：实现随屏幕大小而变化的正方形。
+ * @method fixed-scale
+ * @version 3.0.10
+ * @param {Length} $width 默认值：100%。用以指定内容元素的初始宽度，由于尺寸需动态变化，不要使用固定单位 <3.0.10>
+ * @param {Length} $scale 默认值：1/1，即正方形。用以指定内容元素的宽度高比 <3.0.10>
+ */
+/**
+ * @module 文本
+ * @description 链接处理方法
+ * @method link
+ * @version 1.0.0
+ * @param {Color} $color 定义链接颜色 <1.0.0>
+ */
+/**
+ * @module 文本
+ * @description 文本碰到边界是否换行
+ * @method wrap
+ * @version 1.0.0
+ * @param {Boolean} $is-wrap 定义文本是否换行，默认值：true <2.0.0>
+ */
+/**
+ * @module 文本
+ * @description 单行文本溢出时显示省略号
+ * @method ellipsis
+ * @version 1.0.0
+ * @param {Length} $width 定义容器的宽度，默认值：null <2.0.0>
+ * @param {Integer} $line-clamp 定义需要显示的行数，默认值：1（即使用单行溢出的处理方案），需要注意的是本参数只支持webkit内核 <2.1.2>
+ */
+/**
+ * @module 文本
+ * @description 文字隐藏方案
+ * @method texthide
+ * @version 1.0.0
+ * @param {Length} $width 定义容器的宽度，默认值：null <2.0.0>
+ */
+/**
+ * Yo框架全局Reset
+ * Yo重置Mobile及高级浏览器上常见的差异
+ */
+*,
+::before,
+::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+
+html,
+body {
+  overflow: hidden;
+  height: 100%; }
+
+::-webkit-scrollbar {
+  display: none; }
+
+html {
+  background-color: #eee;
+  color: #212121;
+  font-size: 100px;
+  -webkit-user-select: none;
+  user-select: none; }
+
+body {
+  margin: 0;
+  font-size: 0.14em;
+  line-height: 1.5;
+  font-family: Helvetica Neue, Helvetica, STHeiTi, sans-serif; }
+
+ul,
+ol,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+figure,
+form,
+fieldset,
+legend,
+input,
+textarea,
+button,
+p,
+blockquote,
+th,
+td,
+pre,
+xmp {
+  margin: 0;
+  padding: 0; }
+
+input,
+textarea,
+button,
+select,
+pre,
+xmp,
+tt,
+code,
+kbd,
+samp {
+  line-height: inherit;
+  font-family: inherit; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+small,
+big,
+input,
+textarea,
+button,
+select {
+  font-size: inherit; }
+
+address,
+cite,
+dfn,
+em,
+i,
+optgroup,
+var {
+  font-style: normal; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+  text-align: left; }
+
+ul,
+ol,
+menu {
+  list-style: none; }
+
+fieldset,
+img {
+  border: 0;
+  vertical-align: middle; }
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block; }
+
+audio,
+canvas,
+video {
+  display: inline-block; }
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "\0020"; }
+
+textarea,
+pre,
+xmp {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch; }
+
+textarea {
+  resize: vertical; }
+
+input,
+textarea,
+button,
+select,
+summary,
+a {
+  outline: 0 none; }
+
+input,
+textarea,
+button,
+select {
+  color: inherit; }
+  input:disabled,
+  textarea:disabled,
+  button:disabled,
+  select:disabled {
+    opacity: 1; }
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  padding: 0;
+  border: 0; }
+
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="file"]::-webkit-file-upload-button,
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none; }
+
+::-webkit-details-marker {
+  display: none; }
+
+mark {
+  background-color: rgba(0, 0, 0, 0); }
+
+a,
+ins,
+s,
+u,
+del {
+  text-decoration: none; }
+
+a,
+img {
+  -webkit-touch-callout: none; }
+
+a {
+  color: #00afc7; }
+
+.g-clear::after,
+.g-mod::after {
+  display: block;
+  overflow: hidden;
+  clear: both;
+  height: 0;
+  content: "\0020"; }
+
+@font-face {
+  font-family: yofont;
+  src: url(//ss.qunarzz.com/yo/font/1.0.3/yofont.woff) format("woff"), url(//ss.qunarzz.com/yo/font/1.0.3/yofont.ttf) format("truetype"); }
+
+.yo-ico {
+  font-family: yofont !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  vertical-align: middle; }
+
+#root {
+  height: 100%; }
+
+html {
+  font-size: 100px; }
+
+@font-face {
+  font-family: 'yofont';
+  src: url("../../assets/icons/iconfont.ttf") format("woff"), url("../../assets/icons/iconfont.woff") format("truetype"); }
+
+.index-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%; }
+  .index-container header {
+    display: flex;
+    height: .49rem;
+    background: #fff;
+    font-size: .18rem;
+    text-align: center;
+    line-height: .49rem;
+    justify-content: space-between;
+    color: #fff; }
+    .index-container header .i-city {
+      display: flex;
+      flex: 4;
+      width: 1.75rem;
+      height: .49rem;
+      text-align: left;
+      background-size: 25px;
+      background-repeat: no-repeat;
+      background-position: 15px;
+      background-image: url(//gw.alicdn.com/tfs/TB1mKkzl9zqK1RjSZFpXXakSXXa-50-50.svg);
+      padding-left: 50px; }
+    .index-container header .city-name {
+      display: flex;
+      width: auto;
+      height: .49rem;
+      color: #333;
+      font-weight: 700;
+      font-size: 16px; }
+    .index-container header .item-biaoti {
+      display: flex;
+      flex: 8;
+      width: 2.18rem; }
+      .index-container header .item-biaoti .tab-item {
+        width: auto;
+        padding: 0 .15rem;
+        height: .49rem;
+        color: #777;
+        font-weight: 700;
+        line-height: .49rem;
+        font-size: 16px; }
+      .index-container header .item-biaoti .active {
+        color: #ff2e62;
+        position: relative; }
+        .index-container header .item-biaoti .active::after {
+          pointer-events: none;
+          position: absolute;
+          z-index: 999;
+          top: 0;
+          left: 0;
+          content: "\0020";
+          border-color: #ff2e62;
+          border-style: solid;
+          border-width: 0 0 4px 0;
+          -webkit-transform-origin: 0 0;
+          transform-origin: 0 0; }
+          @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+            .index-container header .item-biaoti .active::after {
+              width: 100%;
+              height: 100%; } }
+          @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+            .index-container header .item-biaoti .active::after {
+              width: 200%;
+              height: 200%;
+              -webkit-transform: scale(0.5);
+              transform: scale(0.5); } }
+          @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+            .index-container header .item-biaoti .active::after {
+              width: 300%;
+              height: 300%;
+              -webkit-transform: scale(0.33333);
+              transform: scale(0.33333); } }
+  .index-container main {
+    flex: 1;
+    overflow: hidden;
+    background: #fff; }
+  .index-container footer {
+    height: .54rem; }
+    .index-container footer ul {
+      height: 100%;
+      display: flex; }
+      .index-container footer ul li {
+        padding-top: 0.05rem;
+        flex: 1;
+        flex-direction: column;
+        background: #f6f6f6;
+        text-align: center;
+        font-size: .12rem;
+        display: flex;
+        color: #c2cfcc; }
+        .index-container footer ul li span {
+          font-size: .30rem;
+          line-height: .3rem; }
+        .index-container footer ul li.active {
+          background: #fff;
+          color: #ff4d64; }
+
+.headerIconfont {
+  font-size: .01rem; }
+
+#headerList {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: .14rem;
+  height: .49rem;
+  line-height: .49rem;
+  color: #000; }
+  #headerList .region {
+    flex: 4;
+    display: flex; }
+    #headerList .region .logo {
+      margin-left: 10px; }
+      #headerList .region .logo img {
+        width: .25rem;
+        height: .25rem; }
+    #headerList .region .activeCity {
+      margin-left: 5px;
+      color: #8A869E; }
+  #headerList .allCity {
+    flex: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: .49rem;
+    line-height: .49rem;
+    color: #000; }
+    #headerList .allCity .sanjiao {
+      width: 4px;
+      height: 5px;
+      margin-left: 5px; }
+  #headerList .comprehensive {
+    flex: 3;
+    color: #000; }
+  #headerList .characteristic {
+    flex: 3; }
+  #headerList .search {
+    flex: 2;
+    text-align: center;
+    font-size: .18rem; }
+
+.list-container {
+  position: relative; }
+  .list-container::after {
+    pointer-events: none;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    content: "\0020";
+    border-color: #e8e8e8;
+    border-style: solid;
+    border-width: 1px 0 0 0;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0; }
+    @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+      .list-container::after {
+        width: 100%;
+        height: 100%; } }
+    @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+      .list-container::after {
+        width: 200%;
+        height: 200%;
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5); } }
+    @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+      .list-container::after {
+        width: 300%;
+        height: 300%;
+        -webkit-transform: scale(0.33333);
+        transform: scale(0.33333); } }
+  .list-container .show {
+    display: block; }
+  .list-container .cinmaUl {
+    position: relative;
+    z-index: 0; }
+  .list-container .filtrate-allCity {
+    position: absolute;
+    top: 30;
+    z-index: 1000;
+    width: 100%;
+    height: 4.46rem;
+    background: #fff;
+    display: none; }
+    .list-container .filtrate-allCity .tab-content {
+      height: 100%;
+      overflow: scroll; }
+      .list-container .filtrate-allCity .tab-content .region-tab {
+        width: 100%;
+        height: 0.44rem;
+        background: white;
+        display: flex; }
+        .list-container .filtrate-allCity .tab-content .region-tab .items {
+          width: 50%;
+          height: 100%;
+          padding: 0 .1rem;
+          display: flex;
+          justify-content: center;
+          /* 水平居中 */
+          align-items: center;
+          font-size: .15rem;
+          color: #777;
+          font-weight: 600; }
+        .list-container .filtrate-allCity .tab-content .region-tab .active {
+          color: #f03d37;
+          position: relative; }
+          .list-container .filtrate-allCity .tab-content .region-tab .active::after {
+            pointer-events: none;
+            position: absolute;
+            z-index: 999;
+            top: 0;
+            left: 0;
+            content: "\0020";
+            border-color: #f03d37;
+            border-style: solid;
+            border-width: 0 0 4px 0;
+            -webkit-transform-origin: 0 0;
+            transform-origin: 0 0; }
+            @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+              .list-container .filtrate-allCity .tab-content .region-tab .active::after {
+                width: 100%;
+                height: 100%; } }
+            @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+              .list-container .filtrate-allCity .tab-content .region-tab .active::after {
+                width: 200%;
+                height: 200%;
+                -webkit-transform: scale(0.5);
+                transform: scale(0.5); } }
+            @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+              .list-container .filtrate-allCity .tab-content .region-tab .active::after {
+                width: 300%;
+                height: 300%;
+                -webkit-transform: scale(0.33333);
+                transform: scale(0.33333); } }
+      .list-container .filtrate-allCity .tab-content .region-list {
+        width: 100%;
+        height: 4.02rem;
+        display: flex;
+        background: #f5f5f5; }
+        .list-container .filtrate-allCity .tab-content .region-list .region-sidenav {
+          width: 35%;
+          height: 100%;
+          overflow: scroll; }
+          .list-container .filtrate-allCity .tab-content .region-list .region-sidenav .district {
+            min-height: 100%;
+            background: #fff; }
+          .list-container .filtrate-allCity .tab-content .region-list .region-sidenav .district-li {
+            width: 100%;
+            height: 0.44rem;
+            display: flex;
+            /* 水平居中 */
+            align-items: center;
+            padding: 0 .25rem 0 .1rem;
+            font-weight: 600; }
+        .list-container .filtrate-allCity .tab-content .region-list .chosen {
+          color: #f03d37; }
+        .list-container .filtrate-allCity .tab-content .region-list .region-list-item {
+          width: 65%;
+          overflow: scroll;
+          background: #f5f5f5; }
+          .list-container .filtrate-allCity .tab-content .region-list .region-list-item .listqqq {
+            height: 0.45rem;
+            display: flex;
+            justify-content: space-between;
+            /* 水平居中 */
+            align-items: center;
+            padding: 0 .1rem; }
+          .list-container .filtrate-allCity .tab-content .region-list .region-list-item .item-name {
+            display: inline-block;
+            width: 1.57rem; }
+          .list-container .filtrate-allCity .tab-content .region-list .region-list-item .item-count {
+            display: inline-block; }
+  .list-container .filtrate-synthesize {
+    position: absolute;
+    top: 30;
+    z-index: 1000;
+    width: 100%;
+    height: 3.45rem;
+    background: #fff;
+    display: none;
+    overflow: scroll; }
+    .list-container .filtrate-synthesize .synthesize-list {
+      height: 0.45rem;
+      display: flex;
+      justify-content: space-between;
+      /* 水平居中 */
+      align-items: center;
+      /* 垂直居中 */
+      padding: 0 .25rem 0 .26rem;
+      position: relative; }
+      .list-container .filtrate-synthesize .synthesize-list::after {
+        pointer-events: none;
+        position: absolute;
+        z-index: 999;
+        top: 0;
+        left: 0;
+        content: "\0020";
+        border-color: #999;
+        border-style: solid;
+        border-width: 0 0 1px 0;
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0; }
+        @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+          .list-container .filtrate-synthesize .synthesize-list::after {
+            width: 100%;
+            height: 100%; } }
+        @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+          .list-container .filtrate-synthesize .synthesize-list::after {
+            width: 200%;
+            height: 200%;
+            -webkit-transform: scale(0.5);
+            transform: scale(0.5); } }
+        @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+          .list-container .filtrate-synthesize .synthesize-list::after {
+            width: 300%;
+            height: 300%;
+            -webkit-transform: scale(0.33333);
+            transform: scale(0.33333); } }
+      .list-container .filtrate-synthesize .synthesize-list span {
+        display: flex;
+        align-items: center;
+        /* 垂直居中 */
+        width: 1.5rem;
+        height: 100%;
+        color: #333;
+        font-weight: 600;
+        font-size: .15rem; }
+      .list-container .filtrate-synthesize .synthesize-list .count {
+        justify-content: flex-end;
+        /* 水平居中 */ }
+  .list-container .filtrate-feature {
+    position: absolute;
+    top: 30;
+    z-index: 1000;
+    width: 100%;
+    height: 3.7rem;
+    background: #fff;
+    display: none;
+    overflow: scroll; }
+    .list-container .filtrate-feature .featureList {
+      width: 100%;
+      padding-left: .12rem;
+      padding-right: .1rem;
+      height: 3.1rem;
+      overflow: scroll; }
+      .list-container .filtrate-feature .featureList .item-title {
+        font-size: .15rem;
+        margin-top: .11rem; }
+      .list-container .filtrate-feature .featureList .item-list {
+        display: flex;
+        flex-wrap: wrap;
+        overflow: scroll;
+        justify-content: space-between; }
+        .list-container .filtrate-feature .featureList .item-list .item {
+          height: 0.38rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          margin-top: .1rem;
+          font-size: .11rem; }
+        .list-container .filtrate-feature .featureList .item-list .specialHall, .list-container .filtrate-feature .featureList .item-list .serviceBtn {
+          width: calc(25% - .1rem);
+          height: 0.38rem;
+          position: relative;
+          border-radius: 0.1rem; }
+          .list-container .filtrate-feature .featureList .item-list .specialHall::after, .list-container .filtrate-feature .featureList .item-list .serviceBtn::after {
+            pointer-events: none;
+            position: absolute;
+            z-index: 999;
+            top: 0;
+            left: 0;
+            content: "\0020";
+            border-color: #ccc;
+            border-style: solid;
+            border-width: 1px;
+            -webkit-transform-origin: 0 0;
+            transform-origin: 0 0; }
+            @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+              .list-container .filtrate-feature .featureList .item-list .specialHall::after, .list-container .filtrate-feature .featureList .item-list .serviceBtn::after {
+                width: 100%;
+                height: 100%;
+                border-radius: 0.1rem; } }
+            @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+              .list-container .filtrate-feature .featureList .item-list .specialHall::after, .list-container .filtrate-feature .featureList .item-list .serviceBtn::after {
+                width: 200%;
+                height: 200%;
+                -webkit-transform: scale(0.5);
+                transform: scale(0.5);
+                border-radius: 0.2rem; } }
+            @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+              .list-container .filtrate-feature .featureList .item-list .specialHall::after, .list-container .filtrate-feature .featureList .item-list .serviceBtn::after {
+                width: 300%;
+                height: 300%;
+                -webkit-transform: scale(0.33333);
+                transform: scale(0.33333);
+                border-radius: 0.3rem; } }
+        .list-container .filtrate-feature .featureList .item-list .borColr {
+          color: #f03d37;
+          position: relative;
+          border-radius: 0.1rem;
+          background: #fcf0f0; }
+          .list-container .filtrate-feature .featureList .item-list .borColr::after {
+            pointer-events: none;
+            position: absolute;
+            z-index: 999;
+            top: 0;
+            left: 0;
+            content: "\0020";
+            border-color: #f03d37;
+            border-style: solid;
+            border-width: 1px;
+            -webkit-transform-origin: 0 0;
+            transform-origin: 0 0; }
+            @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+              .list-container .filtrate-feature .featureList .item-list .borColr::after {
+                width: 100%;
+                height: 100%;
+                border-radius: 0.1rem; } }
+            @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+              .list-container .filtrate-feature .featureList .item-list .borColr::after {
+                width: 200%;
+                height: 200%;
+                -webkit-transform: scale(0.5);
+                transform: scale(0.5);
+                border-radius: 0.2rem; } }
+            @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+              .list-container .filtrate-feature .featureList .item-list .borColr::after {
+                width: 300%;
+                height: 300%;
+                -webkit-transform: scale(0.33333);
+                transform: scale(0.33333);
+                border-radius: 0.3rem; } }
+        .list-container .filtrate-feature .featureList .item-list .serviceBtn {
+          overflow: hidden;
+          margin-right: .14rem; }
+      .list-container .filtrate-feature .featureList .item-list1 {
+        justify-content: flex-start; }
+      .list-container .filtrate-feature .featureList .special-btn {
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        text-align: center;
+        background: #fafafa;
+        width: 100%;
+        height: 0.6rem;
+        display: flex;
+        justify-content: space-between;
+        /* 水平居中 */
+        align-items: center;
+        padding: 0 .2rem;
+        padding-left: .1rem;
+        padding-right: .2rem; }
+        .list-container .filtrate-feature .featureList .special-btn .resetBtn {
+          width: 0.79rem;
+          height: 0.36rem;
+          background: #e5e5e5;
+          border-radius: .06rem;
+          display: flex;
+          justify-content: center;
+          /* 水平居中 */
+          align-items: center; }
+        .list-container .filtrate-feature .featureList .special-btn .affirmBtn {
+          width: 0.79rem;
+          height: 0.36rem;
+          background: #f03d37;
+          color: #fff;
+          border-radius: .06rem;
+          display: flex;
+          justify-content: center;
+          /* 水平居中 */
+          align-items: center; }
+  .list-container ul {
+    background-color: #fff; }
+    .list-container ul li {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      padding: 10px 10px;
+      overflow: hidden;
+      position: relative; }
+      .list-container ul li .cinema {
+        display: flex;
+        justify-content: space-between;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100%; }
+        @media screen and (max-width: 375px) {
+          .list-container ul li .cinema {
+            font-size: 18px; } }
+        @media screen and (min-width: 376px) and (max-width: 450px) {
+          .list-container ul li .cinema {
+            font-size: 21px; } }
+        @media screen and (min-width: 451px) and (max-width: 699px) {
+          .list-container ul li .cinema {
+            font-size: 28px; } }
+        @media screen and (min-width: 700px) and (max-width: 900px) {
+          .list-container ul li .cinema {
+            font-size: 34px; } }
+        @media screen and (min-width: 901px) {
+          .list-container ul li .cinema {
+            font-size: 39px; } }
+        .list-container ul li .cinema .number {
+          color: red;
+          font-size: .16rem; }
+        .list-container ul li .cinema .yuanFont {
+          font-size: .1rem;
+          color: red; }
+        .list-container ul li .cinema .qiFont {
+          font-size: .1rem;
+          color: #999; }
+      .list-container ul li .addr {
+        display: flex;
+        justify-content: space-between; }
+        .list-container ul li .addr .position {
+          font-size: 0.14rem;
+          color: #666;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          width: 100%; }
+          @media screen and (max-width: 375px) {
+            .list-container ul li .addr .position {
+              font-size: 15px; } }
+          @media screen and (min-width: 376px) and (max-width: 450px) {
+            .list-container ul li .addr .position {
+              font-size: 16px; } }
+          @media screen and (min-width: 451px) and (max-width: 699px) {
+            .list-container ul li .addr .position {
+              font-size: 20px; } }
+          @media screen and (min-width: 700px) and (max-width: 900px) {
+            .list-container ul li .addr .position {
+              font-size: 25px; } }
+          @media screen and (min-width: 901px) {
+            .list-container ul li .addr .position {
+              font-size: 29px; } }
+        .list-container ul li .addr .distance {
+          padding-left: 5px; }
+      .list-container ul li .status {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100%; }
+        .list-container ul li .status .blueBorder {
+          padding: 1px;
+          margin-right: 5px;
+          color: #1394f3;
+          border: 1px solid #A4D5FA;
+          font-size: .1rem; }
+        .list-container ul li .status .yellowBorder {
+          padding: 1px;
+          margin-right: 5px;
+          color: #f90;
+          border: 1px solid #f90;
+          font-size: .1rem; }
+      .list-container ul li .discount {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100%;
+        display: flex;
+        font-size: .1rem;
+        padding-top: 5px;
+        color: #999; }
+        .list-container ul li .discount .huiFont {
+          background-color: #FF9C1C;
+          color: #fff;
+          width: .15rem;
+          height: .15rem;
+          border-radius: 3px;
+          text-align: center;
+          line-height: .15rem;
+          margin-right: .05rem; }
+      .list-container ul li::after {
+        pointer-events: none;
+        position: absolute;
+        z-index: 999;
+        top: 0;
+        left: 0;
+        content: "\0020";
+        border-color: #999;
+        border-style: solid;
+        border-width: 0 0 1px 0;
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0; }
+        @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+          .list-container ul li::after {
+            width: 100%;
+            height: 100%; } }
+        @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+          .list-container ul li::after {
+            width: 200%;
+            height: 200%;
+            -webkit-transform: scale(0.5);
+            transform: scale(0.5); } }
+        @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+          .list-container ul li::after {
+            width: 300%;
+            height: 300%;
+            -webkit-transform: scale(0.33333);
+            transform: scale(0.33333); } }
+
+.head,
+.foot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px; }
+
+.head img,
+.foot img {
+  width: .16rem;
+  height: .16rem;
+  transition: transform 150ms;
+  -webkit-transition: transform 150ms; }
+
+.head img {
+  transform: rotate(180deg); }
+
+.up {
+  transform: rotate(360deg) !important;
+  -webkit-transform: rotate(360deg) !important; }
+
+.down {
+  transform: rotate(180deg); }
+
+.list-container {
+  overflow: hidden; }
+  .list-container .head,
+  .list-container .foot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px; }
+  .list-container .head img,
+  .list-container .foot img {
+    width: .16rem;
+    height: .16rem;
+    transition: transform 150ms;
+    -webkit-transition: transform 150ms; }
+  .list-container .head img {
+    transform: rotate(180deg); }
+  .list-container .up {
+    transform: rotate(360deg) !important;
+    -webkit-transform: rotate(360deg) !important; }
+  .list-container .down {
+    transform: rotate(180deg); }
+  .list-container ul {
+    background: #fff; }
+    .list-container ul li.list-item {
+      display: flex;
+      flex-direction: row;
+      overflow: hidden;
+      justify-content: space-between;
+      padding: .20rem .20rem .20rem .15rem;
+      vertical-align: top;
+      position: relative; }
+      .list-container ul li.list-item::after {
+        pointer-events: none;
+        position: absolute;
+        z-index: 999;
+        top: 0;
+        left: 0;
+        content: "\0020";
+        border-color: #e8e8e8;
+        border-style: solid;
+        border-width: 1px 0 0 0;
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0; }
+        @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+          .list-container ul li.list-item::after {
+            width: 100%;
+            height: 100%; } }
+        @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+          .list-container ul li.list-item::after {
+            width: 200%;
+            height: 200%;
+            -webkit-transform: scale(0.5);
+            transform: scale(0.5); } }
+        @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+          .list-container ul li.list-item::after {
+            width: 300%;
+            height: 300%;
+            -webkit-transform: scale(0.33333);
+            transform: scale(0.33333); } }
+      .list-container ul li.list-item img {
+        width: .71rem;
+        height: 1.04rem; }
+      .list-container ul li.list-item .item-desc {
+        flex: 5;
+        display: flex;
+        flex-direction: column;
+        width: 2.6rem;
+        padding: 0 .11rem;
+        overflow: hidden; }
+        .list-container ul li.list-item .item-desc .brief {
+          color: #666;
+          font-size: .13rem;
+          margin-top: 0.03rem;
+          width: auto;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          font-weight: 500;
+          width: 100%; }
+          @media screen and (max-width: 375px) {
+            .list-container ul li.list-item .item-desc .brief {
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap; } }
+        .list-container ul li.list-item .item-desc .item-title {
+          font-weight: bold;
+          line-height: .2rem;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          width: 100%; }
+          @media screen and (max-width: 375px) {
+            .list-container ul li.list-item .item-desc .item-title {
+              font-size: 16px; } }
+          @media screen and (min-width: 376px) {
+            .list-container ul li.list-item .item-desc .item-title {
+              font-size: 18px; } }
+        .list-container ul li.list-item .item-desc .fantastic {
+          height: .15rem;
+          margin-top: .05rem;
+          font-size: .13rem; }
+          .list-container ul li.list-item .item-desc .fantastic .tpp-fun {
+            display: inline-block;
+            width: auto;
+            color: #ff9c1c;
+            position: relative;
+            padding: 0 .03rem;
+            border-radius: 5%;
+            margin-right: .04rem; }
+            .list-container ul li.list-item .item-desc .fantastic .tpp-fun::after {
+              pointer-events: none;
+              position: absolute;
+              z-index: 999;
+              top: 0;
+              left: 0;
+              content: "\0020";
+              border-color: #ff9c1c;
+              border-style: solid;
+              border-width: 1px 1px 1px 1px;
+              -webkit-transform-origin: 0 0;
+              transform-origin: 0 0; }
+              @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+                .list-container ul li.list-item .item-desc .fantastic .tpp-fun::after {
+                  width: 100%;
+                  height: 100%; } }
+              @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+                .list-container ul li.list-item .item-desc .fantastic .tpp-fun::after {
+                  width: 200%;
+                  height: 200%;
+                  -webkit-transform: scale(0.5);
+                  transform: scale(0.5); } }
+              @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+                .list-container ul li.list-item .item-desc .fantastic .tpp-fun::after {
+                  width: 300%;
+                  height: 300%;
+                  -webkit-transform: scale(0.33333);
+                  transform: scale(0.33333); } }
+          .list-container ul li.list-item .item-desc .fantastic .tpp-best {
+            display: inline-block;
+            color: #1394f3;
+            position: relative;
+            padding: 0 .03rem;
+            border-radius: 5%; }
+            .list-container ul li.list-item .item-desc .fantastic .tpp-best::after {
+              pointer-events: none;
+              position: absolute;
+              z-index: 999;
+              top: 0;
+              left: 0;
+              content: "\0020";
+              border-color: #1394f3;
+              border-style: solid;
+              border-width: 1px 1px 1px 1px;
+              -webkit-transform-origin: 0 0;
+              transform-origin: 0 0; }
+              @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+                .list-container ul li.list-item .item-desc .fantastic .tpp-best::after {
+                  width: 100%;
+                  height: 100%; } }
+              @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+                .list-container ul li.list-item .item-desc .fantastic .tpp-best::after {
+                  width: 200%;
+                  height: 200%;
+                  -webkit-transform: scale(0.5);
+                  transform: scale(0.5); } }
+              @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+                .list-container ul li.list-item .item-desc .fantastic .tpp-best::after {
+                  width: 300%;
+                  height: 300%;
+                  -webkit-transform: scale(0.33333);
+                  transform: scale(0.33333); } }
+        .list-container ul li.list-item .item-desc .item-info {
+          display: flex; }
+          .list-container ul li.list-item .item-desc .item-info .item-pos {
+            width: auto; }
+          .list-container ul li.list-item .item-desc .item-info .item-grade {
+            flex: 1;
+            color: #ff9c1c;
+            font-size: .14rem; }
+        .list-container ul li.list-item .item-desc .item-time {
+          font-size: .12rem;
+          color: #888; }
+      .list-container ul li.list-item .item-salary {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        font-size: .16rem;
+        color: #999;
+        width: .7rem;
+        justify-content: center; }
+        .list-container ul li.list-item .item-salary .buy {
+          width: .5rem;
+          height: .28rem;
+          background-image: linear-gradient(45deg, #ff47a8, #ff2e62);
+          border-radius: 1.2rem;
+          text-align: center;
+          color: #fff;
+          background-color: transparent;
+          box-sizing: border-box;
+          height: .28rem;
+          line-height: .28rem;
+          padding: 0 .13rem;
+          font-size: .12rem;
+          margin-bottom: 0.056rem;
+          font-weight: 600; }
+        .list-container ul li.list-item .item-salary .low-price {
+          font-size: .11rem;
+          width: .5rem;
+          text-align: center;
+          font-weight: 600; }
+
+.mine-title {
+  background: #FF2E62;
+  width: 100%;
+  height: 1.2rem;
+  text-align: center; }
+  .mine-title .headPortrait {
+    width: 0.72rem;
+    height: 0.72rem;
+    background: cadetblue;
+    border-radius: 50%;
+    margin: 0 auto;
+    background-image: url(../../assets/images/r.jpg);
+    background-size: .72rem .72rem; }
+
+.mine-list {
+  display: flex;
+  flex-direction: column; }
+  .mine-list .ticketCoupon {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: row;
+    text-align: center;
+    margin-top: 50px; }
+    .mine-list .ticketCoupon .ticket {
+      color: #666;
+      display: flex;
+      width: 50%;
+      flex-direction: column; }
+    .mine-list .ticketCoupon .dianying {
+      color: #FF4D64; }
+    .mine-list .ticketCoupon .quan {
+      color: #FEA54C; }
+    .mine-list .ticketCoupon .yo-ico {
+      font-size: 30px; }
+    .mine-list .ticketCoupon .coupon {
+      color: #666;
+      display: flex;
+      width: 50%;
+      flex-direction: column; }
+  .mine-list .tppCard,
+  .mine-list .tppHelp {
+    height: 0.6rem;
+    width: 100%;
+    padding: 0 29px 0 14px; }
+    .mine-list .tppCard .listCard,
+    .mine-list .tppHelp .listCard {
+      position: relative;
+      display: flex;
+      justify-content: space-between; }
+      .mine-list .tppCard .listCard::after,
+      .mine-list .tppHelp .listCard::after {
+        pointer-events: none;
+        position: absolute;
+        z-index: 999;
+        top: 0;
+        left: 0;
+        content: "\0020";
+        border-color: #999;
+        border-style: solid;
+        border-width: 0 0 1px 0;
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0; }
+        @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+          .mine-list .tppCard .listCard::after,
+          .mine-list .tppHelp .listCard::after {
+            width: 100%;
+            height: 100%; } }
+        @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+          .mine-list .tppCard .listCard::after,
+          .mine-list .tppHelp .listCard::after {
+            width: 200%;
+            height: 200%;
+            -webkit-transform: scale(0.5);
+            transform: scale(0.5); } }
+        @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+          .mine-list .tppCard .listCard::after,
+          .mine-list .tppHelp .listCard::after {
+            width: 300%;
+            height: 300%;
+            -webkit-transform: scale(0.33333);
+            transform: scale(0.33333); } }
+    .mine-list .tppCard span,
+    .mine-list .tppHelp span {
+      height: 100%;
+      font-size: 16px;
+      line-height: .6rem; }
+    .mine-list .tppCard .ticket-icon,
+    .mine-list .tppHelp .ticket-icon {
+      margin-top: 10px; }
+    .mine-list .tppCard .help,
+    .mine-list .tppHelp .help {
+      display: inline-block; }
+    .mine-list .tppCard .consult,
+    .mine-list .tppHelp .consult {
+      display: inline-block;
+      font-size: 12px;
+      color: #bcbcbc;
+      text-align: right; }
+    .mine-list .tppCard .icon-arrow,
+    .mine-list .tppHelp .icon-arrow {
+      display: inline-block; }
+    .mine-list .tppCard .icon,
+    .mine-list .tppHelp .icon {
+      display: inline-block;
+      width: 0.12rem; }
+
+.mineHeader {
+  height: 0.49rem;
+  width: 100%;
+  background-color: #FF2E62; }
+
+.detailHea {
+  width: 100%;
+  height: 49px;
+  display: flex; }
+  .detailHea span {
+    color: #E54847; }
+  .detailHea .icon {
+    width: 0.52rem;
+    height: 100%;
+    text-align: center; }
+  .detailHea .title {
+    width: 2.7rem;
+    height: 100%;
+    text-align: center; }
+
+.detailBox {
+  display: flex;
+  flex-direction: row;
+  padding: 19px 10px 19px 15px;
+  background: cornflowerblue;
+  background-size: 500px 500px; }
+  .detailBox .detailContent {
+    display: flex;
+    flex-direction: column; }
+  .detailBox .wrap {
+    display: flex;
+    flex: 0;
+    justify-content: space-between; }
+  .detailBox .detailImg img {
+    width: 110px;
+    height: 150px; }
+  .detailBox .detailContent {
+    width: 1.8rem;
+    margin-left: 12.5px; }
+    .detailBox .detailContent .nm {
+      line-height: 20px;
+      font-size: 20px;
+      margin-top: 2px;
+      font-weight: 700;
+      overflow: hidden; }
+    .detailBox .detailContent .enNm {
+      line-height: 11px;
+      font-size: 11px;
+      margin-top: 10px; }
+    .detailBox .detailContent .grade {
+      margin-top: 11px;
+      line-height: 18px; }
+      .detailBox .detailContent .grade .score {
+        color: #fc0;
+        font-size: 18px;
+        font-weight: 700; }
+    .detailBox .detailContent .kind, .detailBox .detailContent .area, .detailBox .detailContent .time {
+      font-size: 12px;
+      line-height: 12px;
+      margin-top: 10px;
+      font-weight: 600; }
+  .detailBox .detailArrow {
+    padding-right: .1rem;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px; }
+
+.cinemaList {
+  position: relative; }
+  .cinemaList::after {
+    pointer-events: none;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    content: "\0020";
+    border-color: #e8e8e8;
+    border-style: solid;
+    border-width: 1px 0 0 0;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0; }
+    @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+      .cinemaList::after {
+        width: 100%;
+        height: 100%; } }
+    @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+      .cinemaList::after {
+        width: 200%;
+        height: 200%;
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5); } }
+    @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+      .cinemaList::after {
+        width: 300%;
+        height: 300%;
+        -webkit-transform: scale(0.33333);
+        transform: scale(0.33333); } }
+  .cinemaList ul {
+    background-color: #fff; }
+    .cinemaList ul li {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 10px 0;
+      overflow: hidden;
+      position: relative; }
+      .cinemaList ul li .cinema {
+        display: flex;
+        justify-content: space-between;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100%; }
+        @media screen and (max-width: 375px) {
+          .cinemaList ul li .cinema {
+            font-size: 18px; } }
+        @media screen and (min-width: 376px) and (max-width: 450px) {
+          .cinemaList ul li .cinema {
+            font-size: 21px; } }
+        @media screen and (min-width: 451px) and (max-width: 699px) {
+          .cinemaList ul li .cinema {
+            font-size: 28px; } }
+        @media screen and (min-width: 700px) and (max-width: 900px) {
+          .cinemaList ul li .cinema {
+            font-size: 34px; } }
+        @media screen and (min-width: 901px) {
+          .cinemaList ul li .cinema {
+            font-size: 39px; } }
+        .cinemaList ul li .cinema .number {
+          color: red;
+          font-size: .16rem; }
+        .cinemaList ul li .cinema .yuanFont {
+          font-size: .1rem;
+          color: red; }
+        .cinemaList ul li .cinema .qiFont {
+          font-size: .1rem;
+          color: #999; }
+      .cinemaList ul li .addr {
+        display: flex;
+        justify-content: space-between; }
+        .cinemaList ul li .addr .position {
+          font-size: 0.14rem;
+          color: #666;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          width: 100%; }
+          @media screen and (max-width: 375px) {
+            .cinemaList ul li .addr .position {
+              font-size: 15px; } }
+          @media screen and (min-width: 376px) and (max-width: 450px) {
+            .cinemaList ul li .addr .position {
+              font-size: 16px; } }
+          @media screen and (min-width: 451px) and (max-width: 699px) {
+            .cinemaList ul li .addr .position {
+              font-size: 20px; } }
+          @media screen and (min-width: 700px) and (max-width: 900px) {
+            .cinemaList ul li .addr .position {
+              font-size: 25px; } }
+          @media screen and (min-width: 901px) {
+            .cinemaList ul li .addr .position {
+              font-size: 29px; } }
+        .cinemaList ul li .addr .distance {
+          padding-left: 5px; }
+      .cinemaList ul li .status {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100%; }
+        .cinemaList ul li .status .blueBorder {
+          padding: 1px;
+          margin-right: 5px;
+          color: #1394f3;
+          border: 1px solid #A4D5FA;
+          font-size: .1rem; }
+        .cinemaList ul li .status .yellowBorder {
+          padding: 1px;
+          margin-right: 5px;
+          color: #f90;
+          border: 1px solid #f90;
+          font-size: .1rem; }
+      .cinemaList ul li .discount {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100%;
+        display: flex;
+        font-size: .1rem;
+        padding-top: 5px;
+        color: #999; }
+        .cinemaList ul li .discount .huiFont {
+          background-color: #FF9C1C;
+          color: #fff;
+          width: .15rem;
+          height: .15rem;
+          border-radius: 3px;
+          text-align: center;
+          line-height: .15rem;
+          margin-right: .05rem; }
+      .cinemaList ul li::after {
+        pointer-events: none;
+        position: absolute;
+        z-index: 999;
+        top: 0;
+        left: 0;
+        content: "\0020";
+        border-color: #999;
+        border-style: solid;
+        border-width: 0 0 1px 0;
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0; }
+        @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+          .cinemaList ul li::after {
+            width: 100%;
+            height: 100%; } }
+        @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+          .cinemaList ul li::after {
+            width: 200%;
+            height: 200%;
+            -webkit-transform: scale(0.5);
+            transform: scale(0.5); } }
+        @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+          .cinemaList ul li::after {
+            width: 300%;
+            height: 300%;
+            -webkit-transform: scale(0.33333);
+            transform: scale(0.33333); } }
+
+.MdetACtive {
+  color: #ff2e62;
+  position: relative; }
+  .MdetACtive::after {
+    pointer-events: none;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    content: "\0020";
+    border-color: #ff2e62;
+    border-style: solid;
+    border-width: 0 0 4px 0;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0; }
+    @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+      .MdetACtive::after {
+        width: 100%;
+        height: 100%; } }
+    @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+      .MdetACtive::after {
+        width: 200%;
+        height: 200%;
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5); } }
+    @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+      .MdetACtive::after {
+        width: 300%;
+        height: 300%;
+        -webkit-transform: scale(0.33333);
+        transform: scale(0.33333); } }
+
+.wrap222 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding: 10px 10px;
+  overflow: hidden;
+  position: relative; }
+  .wrap222 .cinema {
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%; }
+    @media screen and (max-width: 375px) {
+      .wrap222 .cinema {
+        font-size: 18px; } }
+    @media screen and (min-width: 376px) and (max-width: 450px) {
+      .wrap222 .cinema {
+        font-size: 21px; } }
+    @media screen and (min-width: 451px) and (max-width: 699px) {
+      .wrap222 .cinema {
+        font-size: 28px; } }
+    @media screen and (min-width: 700px) and (max-width: 900px) {
+      .wrap222 .cinema {
+        font-size: 34px; } }
+    @media screen and (min-width: 901px) {
+      .wrap222 .cinema {
+        font-size: 39px; } }
+    .wrap222 .cinema .number {
+      color: red;
+      font-size: .16rem; }
+    .wrap222 .cinema .yuanFont {
+      font-size: .1rem;
+      color: red; }
+    .wrap222 .cinema .qiFont {
+      font-size: .1rem;
+      color: #999; }
+  .wrap222 .addr {
+    display: flex;
+    justify-content: space-between; }
+    .wrap222 .addr .position {
+      font-size: 0.14rem;
+      color: #666;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 100%; }
+      @media screen and (max-width: 375px) {
+        .wrap222 .addr .position {
+          font-size: 15px; } }
+      @media screen and (min-width: 376px) and (max-width: 450px) {
+        .wrap222 .addr .position {
+          font-size: 16px; } }
+      @media screen and (min-width: 451px) and (max-width: 699px) {
+        .wrap222 .addr .position {
+          font-size: 20px; } }
+      @media screen and (min-width: 700px) and (max-width: 900px) {
+        .wrap222 .addr .position {
+          font-size: 25px; } }
+      @media screen and (min-width: 901px) {
+        .wrap222 .addr .position {
+          font-size: 29px; } }
+    .wrap222 .addr .distance {
+      padding-left: 5px; }
+  .wrap222 .status {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%; }
+    .wrap222 .status .blueBorder {
+      padding: 1px;
+      margin-right: 5px;
+      color: #1394f3;
+      border: 1px solid #A4D5FA;
+      font-size: .1rem; }
+    .wrap222 .status .yellowBorder {
+      padding: 1px;
+      margin-right: 5px;
+      color: #f90;
+      border: 1px solid #f90;
+      font-size: .1rem; }
+  .wrap222 .discount {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    display: flex;
+    font-size: .1rem;
+    padding-top: 5px;
+    color: #999; }
+    .wrap222 .discount .huiFont {
+      background-color: #FF9C1C;
+      color: #fff;
+      width: .15rem;
+      height: .15rem;
+      border-radius: 3px;
+      text-align: center;
+      line-height: .15rem;
+      margin-right: .05rem; }
+  .wrap222::after {
+    pointer-events: none;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    content: "\0020";
+    border-color: #999;
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0; }
+    @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+      .wrap222::after {
+        width: 100%;
+        height: 100%; } }
+    @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+      .wrap222::after {
+        width: 200%;
+        height: 200%;
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5); } }
+    @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+      .wrap222::after {
+        width: 300%;
+        height: 300%;
+        -webkit-transform: scale(0.33333);
+        transform: scale(0.33333); } }
+
+.detailHea {
+  display: flex; }
+  .detailHea .title {
+    flex: 1; }
+
+.bodyWrap {
+  overflow: hidden;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  background: #fff;
+  position: relative; }
+  .bodyWrap::after {
+    pointer-events: none;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    content: "\0020";
+    border-color: #e8e8e8;
+    border-style: solid;
+    border-width: 1px 0 0 0;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0; }
+    @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+      .bodyWrap::after {
+        width: 100%;
+        height: 100%; } }
+    @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+      .bodyWrap::after {
+        width: 200%;
+        height: 200%;
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5); } }
+    @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+      .bodyWrap::after {
+        width: 300%;
+        height: 300%;
+        -webkit-transform: scale(0.33333);
+        transform: scale(0.33333); } }
+  .bodyWrap .line-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+  .bodyWrap .C-detail-Top {
+    display: flex;
+    width: 100%;
+    height: .73rem;
+    align-items: center; }
+    .bodyWrap .C-detail-Top .cinema-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: .15rem .3rem .15rem .15rem; }
+      .bodyWrap .C-detail-Top .cinema-info .title {
+        font-size: 17px;
+        line-height: 24px;
+        font-weight: 700; }
+      .bodyWrap .C-detail-Top .cinema-info .location {
+        font-size: 13px;
+        line-height: 18.5px;
+        margin-top: 2px;
+        color: #999; }
+    .bodyWrap .C-detail-Top .cinema-location {
+      width: 0.71rem;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 0.3rem;
+      position: relative; }
+      .bodyWrap .C-detail-Top .cinema-location::after {
+        pointer-events: none;
+        position: absolute;
+        z-index: 999;
+        top: 0;
+        left: 0;
+        content: "\0020";
+        border-color: #999;
+        border-style: solid;
+        border-width: 0 0 0 1px;
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0; }
+        @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+          .bodyWrap .C-detail-Top .cinema-location::after {
+            width: 100%;
+            height: 100%; } }
+        @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+          .bodyWrap .C-detail-Top .cinema-location::after {
+            width: 200%;
+            height: 200%;
+            -webkit-transform: scale(0.5);
+            transform: scale(0.5); } }
+        @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+          .bodyWrap .C-detail-Top .cinema-location::after {
+            width: 300%;
+            height: 300%;
+            -webkit-transform: scale(0.33333);
+            transform: scale(0.33333); } }
+  .bodyWrap .img-nm {
+    display: flex; }
+    .bodyWrap .img-nm .img-swiper {
+      display: flex;
+      width: 100%;
+      height: 1.35rem;
+      background: cornflowerblue;
+      line-height: 1.35em;
+      padding: 12px 0; }
+    .bodyWrap .img-nm .swiper-container {
+      width: 100%;
+      height: 100%;
+      text-align: center; }
+    .bodyWrap .img-nm .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      /* background: #fff; */
+      width: .75rem !important;
+      height: 1.0924rem;
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+      transition: 300ms;
+      transform: scale(0.8); }
+    .bodyWrap .img-nm .swiper-slide img {
+      height: 1.1rem;
+      width: .75rem;
+      border: 2px solid #fff; }
+      .bodyWrap .img-nm .swiper-slide img::after {
+        content: '';
+        width: 0;
+        height: 0;
+        border: 2px 2px 0 2px solid #fff;
+        background: #000; }
+    .bodyWrap .img-nm .swiper-slide-active,
+    .bodyWrap .img-nm .swiper-slide-duplicate-active {
+      transform: scale(1); }
+  .bodyWrap .movie-info {
+    width: 100%;
+    height: 0.665rem;
+    padding: 11px 15px;
+    text-align: center; }
+    .bodyWrap .movie-info .title {
+      font-size: 17px;
+      line-height: 24px;
+      font-weight: 700;
+      color: #333; }
+    .bodyWrap .movie-info .sc {
+      color: #ffb400;
+      font-size: 16px;
+      font-weight: 700; }
+
+.C-movie-Date {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  position: relative; }
+  .C-movie-Date::after {
+    pointer-events: none;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    content: "\0020";
+    border-color: #e8e8e8;
+    border-style: solid;
+    border-width: 1px 0 1px 0;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0; }
+    @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+      .C-movie-Date::after {
+        width: 100%;
+        height: 100%; } }
+    @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+      .C-movie-Date::after {
+        width: 200%;
+        height: 200%;
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5); } }
+    @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+      .C-movie-Date::after {
+        width: 300%;
+        height: 300%;
+        -webkit-transform: scale(0.33333);
+        transform: scale(0.33333); } }
+
+.swiper-page {
+  text-align: center;
+  font-size: 14px;
+  background: #fff;
+  width: .9586rem !important;
+  height: 45px !important;
+  margin: 0 .15rem;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center; }
+
+.timeActive {
+  color: #f03d37 !important;
+  position: relative; }
+  .timeActive::after {
+    pointer-events: none;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    content: "\0020";
+    border-color: #f03d37;
+    border-style: solid;
+    border-width: 0 0 4px 0;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0; }
+    @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+      .timeActive::after {
+        width: 100%;
+        height: 100%; } }
+    @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+      .timeActive::after {
+        width: 200%;
+        height: 200%;
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5); } }
+    @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+      .timeActive::after {
+        width: 300%;
+        height: 300%;
+        -webkit-transform: scale(0.33333);
+        transform: scale(0.33333); } }
+
+.sessionList {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #fff; }
+  .sessionList div {
+    display: inline-block; }
+    .sessionList div span {
+      display: block; }
+  .sessionList .wrap1, .sessionList .wrap2 {
+    display: flex; }
+  .sessionList .wrap2 {
+    padding-right: .1rem; }
+  .sessionList .session {
+    display: flex;
+    width: 100%;
+    height: 0.795rem;
+    padding: .17rem 0;
+    padding-right: .2rem;
+    padding-left: .225rem;
+    position: relative; }
+    .sessionList .session::after {
+      pointer-events: none;
+      position: absolute;
+      z-index: 999;
+      top: 0;
+      left: 0;
+      content: "\0020";
+      border-color: #e8e8e8;
+      border-style: solid;
+      border-width: 0 0 1px 0;
+      -webkit-transform-origin: 0 0;
+      transform-origin: 0 0; }
+      @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+        .sessionList .session::after {
+          width: 100%;
+          height: 100%; } }
+      @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+        .sessionList .session::after {
+          width: 200%;
+          height: 200%;
+          -webkit-transform: scale(0.5);
+          transform: scale(0.5); } }
+      @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+        .sessionList .session::after {
+          width: 300%;
+          height: 300%;
+          -webkit-transform: scale(0.33333);
+          transform: scale(0.33333); } }
+    .sessionList .session .wrap1 {
+      flex: 1; }
+    .sessionList .session .wrap2 {
+      justify-content: space-between; }
+  .sessionList .timeblock {
+    width: .62rem; }
+    .sessionList .timeblock .openTime {
+      font-size: .2rem;
+      color: #333; }
+    .sessionList .timeblock .breaks {
+      font-size: .11rem;
+      color: #333;
+      margin-top: .1rem; }
+  .sessionList .infoblock {
+    margin-left: .17rem;
+    width: 0.88rem; }
+    .sessionList .infoblock .language {
+      display: inline-block;
+      line-height: .18rem;
+      font-size: .13rem;
+      color: #333; }
+    .sessionList .infoblock .twoD {
+      display: inline-block;
+      line-height: .18rem;
+      font-size: .13rem;
+      color: #333; }
+    .sessionList .infoblock .movieHall {
+      margin-top: 0.07rem;
+      font-size: 0.11rem;
+      color: #999999; }
+  .sessionList .priceblock {
+    width: .8rem;
+    height: 100%; }
+    .sessionList .priceblock .price {
+      font-size: 0.19rem;
+      color: #f03d37; }
+    .sessionList .priceblock .discount {
+      font-size: 0.11rem;
+      color: #999999; }
+  .sessionList .buttonblcok {
+    margin-left: 0.05rem;
+    height: 100%;
+    line-height: 1;
+    flex: 1; }
+    .sessionList .buttonblcok .buyButton {
+      width: 0.45rem;
+      height: .27rem;
+      background: #f03d37;
+      border-radius: 4px;
+      text-align: center;
+      line-height: .27rem;
+      color: #fff; }
+
+.movieComing {
+  width: 100%;
+  background: #F5F5F5;
+  height: 0.4rem;
+  line-height: .4rem;
+  padding: 0 .2rem; }
+
+.m-item {
+  width: 100%;
+  height: 1.25rem;
+  background: #fff;
+  padding: 0 0 0 .15rem;
+  position: relative; }
+  .m-item::after {
+    pointer-events: none;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    content: "\0020";
+    border-color: #999;
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0; }
+    @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+      .m-item::after {
+        width: 100%;
+        height: 100%; } }
+    @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+      .m-item::after {
+        width: 200%;
+        height: 200%;
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5); } }
+    @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+      .m-item::after {
+        width: 300%;
+        height: 300%;
+        -webkit-transform: scale(0.33333);
+        transform: scale(0.33333); } }
+  .m-item .m-info {
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    padding: .15rem .15rem .15rem 0; }
+    .m-item .m-info .wrap {
+      display: flex;
+      flex: 1;
+      width: 100%;
+      justify-content: space-between; }
+    .m-item .m-info .poster-c img {
+      width: 65px;
+      height: 95px; }
+    .m-item .m-info .m-info-content {
+      width: 2.3rem;
+      height: 0.95rem;
+      padding: 0 .1rem; }
+      .m-item .m-info .m-info-content .m-nm {
+        color: #000;
+        font-weight: 600;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: .16rem; }
+      .m-item .m-info .m-info-content .m-numF {
+        margin-top: 0.03rem; }
+      .m-item .m-info .m-info-content .m-num {
+        color: #ff9c1c;
+        font-size: .14rem; }
+      .m-item .m-info .m-info-content .grayFont {
+        font-size: Microsoft Yahei;
+        color: #666;
+        font-size: .13rem;
+        font-weight: 550; }
+    .m-item .m-info .btnWrap {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 0.95rem;
+      line-height: .95rem; }
+      .m-item .m-info .btnWrap .buttn {
+        width: 0.5rem;
+        height: 0.28rem;
+        border-radius: 1.2rem;
+        background-image: linear-gradient(45deg, #1ab4ff, #1394f3);
+        color: #fff;
+        line-height: .28rem;
+        text-align: center;
+        font-weight: 600;
+        font-size: .12rem; }
+
+.cinema-search {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: .07rem .15rem;
+  background: #fff;
+  color: #000; }
+  .cinema-search .cinema-search-control {
+    background: #f5f5f5;
+    width: 3rem;
+    height: 0.32rem;
+    line-height: .32rem;
+    border-radius: 5px; }
+    .cinema-search .cinema-search-control input {
+      width: 2.4rem;
+      height: 100%;
+      border: 0;
+      background: transparent;
+      font-size: 13px;
+      font-weight: 550; }
+    .cinema-search .cinema-search-control .icon-search {
+      font-size: 16px; }
+  .cinema-search .quxiao-search {
+    width: 0.45rem;
+    height: 0.32rem;
+    line-height: .32rem;
+    margin-left: .15rem;
+    font-size: .15rem;
+    line-height: .32rem;
+    color: #1394f3;
+    font-weight: 600; }
+
+.cinemaSerachMod {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  overflow: scroll; }
+  .cinemaSerachMod .searchResult {
+    width: 100%;
+    background: #fff;
+    padding: 0 0 0 .15rem; }
+    .cinemaSerachMod .searchResult .C-list {
+      display: flex;
+      flex-direction: row;
+      width: 3.6rem;
+      height: 1.1rem;
+      padding: .15rem .15rem .15rem 0;
+      position: relative; }
+      .cinemaSerachMod .searchResult .C-list::after {
+        pointer-events: none;
+        position: absolute;
+        z-index: 999;
+        top: 0;
+        left: 0;
+        content: "\0020";
+        border-color: #999;
+        border-style: solid;
+        border-width: 0 0 1px 0;
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0; }
+        @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+          .cinemaSerachMod .searchResult .C-list::after {
+            width: 100%;
+            height: 100%; } }
+        @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+          .cinemaSerachMod .searchResult .C-list::after {
+            width: 200%;
+            height: 200%;
+            -webkit-transform: scale(0.5);
+            transform: scale(0.5); } }
+        @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+          .cinemaSerachMod .searchResult .C-list::after {
+            width: 300%;
+            height: 300%;
+            -webkit-transform: scale(0.33333);
+            transform: scale(0.33333); } }
+      .cinemaSerachMod .searchResult .C-list .info {
+        width: 2.8rem; }
+        .cinemaSerachMod .searchResult .C-list .info .name-one {
+          padding-bottom: .06rem;
+          height: 0.25rem;
+          width: 3.3rem;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap; }
+          .cinemaSerachMod .searchResult .C-list .info .name-one .name {
+            font-size: .16rem;
+            font-weight: 600; }
+          .cinemaSerachMod .searchResult .C-list .info .name-one .sell-Price {
+            margin-left: 0.1rem;
+            font-size: .11rem;
+            color: #999999; }
+            .cinemaSerachMod .searchResult .C-list .info .name-one .sell-Price .price {
+              font-size: .17rem;
+              color: #ef4238; }
+        .cinemaSerachMod .searchResult .C-list .info .address-one {
+          height: 0.19rem;
+          font-size: .13rem;
+          color: #333;
+          font-weight: 520;
+          margin-top: .1rem;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap; }
+        .cinemaSerachMod .searchResult .C-list .info .fear-tags {
+          padding-top: .07rem;
+          height: 0.21rem; }
+          .cinemaSerachMod .searchResult .C-list .info .fear-tags span {
+            position: relative;
+            padding: 0.03rem .03rem;
+            font-size: .1rem; }
+            .cinemaSerachMod .searchResult .C-list .info .fear-tags span::after {
+              pointer-events: none;
+              position: absolute;
+              z-index: 999;
+              top: 0;
+              left: 0;
+              content: "\0020";
+              border-color: #589daf;
+              border-style: solid;
+              border-width: 1px;
+              -webkit-transform-origin: 0 0;
+              transform-origin: 0 0; }
+              @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+                .cinemaSerachMod .searchResult .C-list .info .fear-tags span::after {
+                  width: 100%;
+                  height: 100%; } }
+              @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+                .cinemaSerachMod .searchResult .C-list .info .fear-tags span::after {
+                  width: 200%;
+                  height: 200%;
+                  -webkit-transform: scale(0.5);
+                  transform: scale(0.5); } }
+              @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+                .cinemaSerachMod .searchResult .C-list .info .fear-tags span::after {
+                  width: 300%;
+                  height: 300%;
+                  -webkit-transform: scale(0.33333);
+                  transform: scale(0.33333); } }
+      .cinemaSerachMod .searchResult .C-list .distance {
+        display: flex;
+        text-align: center;
+        align-items: center;
+        font-weight: 600;
+        color: #333; }
+
+#cityList {
+  position: relative;
+  background-color: #f5f5f5; }
+  #cityList .hotCityTitle {
+    display: block;
+    color: #333;
+    font-size: .15rem;
+    background-color: #ebebeb;
+    padding: 10px 15px;
+    line-height: 100%; }
+  #cityList .hotCityList .hotCityListUl {
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    background-color: #f5f5f5;
+    padding-bottom: 15px; }
+    #cityList .hotCityList .hotCityListUl .hotCity {
+      width: 29%;
+      text-align: center;
+      margin-top: 15px;
+      margin-left: 3%;
+      border: 1px solid #ebebeb;
+      padding: 10px 0;
+      background-color: #fff;
+      line-height: 100%; }
+  #cityList .allCityList {
+    background-color: #f5f5f5; }
+    #cityList .allCityList .allCity {
+      width: 100%;
+      text-align: left;
+      margin-top: 15px;
+      margin-left: 3%;
+      border-bottom: 1px solid #ebebeb;
+      padding: 10px 10px;
+      background-color: #f5f5f5;
+      line-height: 100%; }
+  #cityList .AllCity .flexcity {
+    margin-bottom: 100px;
+    position: fixed;
+    top: 20%;
+    right: 0; }
+    #cityList .AllCity .flexcity li a {
+      font-size: 10px; }
+
+.movie-page-info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: .21rem .16rem;
+  color: #fff;
+  height: 100%;
+  overflow: hidden;
+  overflow-y: scroll; }
+  .movie-page-info .movie-info-top {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto; }
+    .movie-page-info .movie-info-top .movie-cover {
+      width: 1rem;
+      height: 1.38rem; }
+      .movie-page-info .movie-info-top .movie-cover img {
+        width: 1rem;
+        height: 1.38rem; }
+    .movie-page-info .movie-info-top .movie-desc {
+      height: 100%;
+      margin-left: .10rem; }
+      .movie-page-info .movie-info-top .movie-desc .movie-cn-nm {
+        font-size: .20rem;
+        color: #fff;
+        font-weight: 700;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; }
+      .movie-page-info .movie-info-top .movie-desc .movie-en-nm {
+        font-size: .12rem;
+        opacity: 0.6;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; }
+      .movie-page-info .movie-info-top .movie-desc .movie-type {
+        font-size: .12rem;
+        opacity: 0.6;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; }
+        .movie-page-info .movie-info-top .movie-desc .movie-type .imax {
+          background: #999;
+          opacity: .6; }
+      .movie-page-info .movie-info-top .movie-desc .actors1 {
+        font-size: .12rem;
+        opacity: 0.6;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; }
+      .movie-page-info .movie-info-top .movie-desc .movie-show-time {
+        font-size: .12rem;
+        opacity: 0.6;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; }
+      .movie-page-info .movie-info-top .movie-desc .btns {
+        display: flex;
+        flex-direction: row; }
+        .movie-page-info .movie-info-top .movie-desc .btns div {
+          width: 1.1rem;
+          height: 0.3rem;
+          border-radius: .08rem;
+          font-size: .14rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #fff;
+          background: rgba(255, 255, 255, 0.35);
+          box-shadow: 0 0.02rem 0.08rem 0 rgba(0, 0, 0, 0.1); }
+        .movie-page-info .movie-info-top .movie-desc .btns .want-to-watch {
+          margin-right: .05rem; }
+  .movie-page-info .real-time-word-of-mouth {
+    width: 100%;
+    height: 1.455rem;
+    margin-top: .15rem;
+    padding: .1rem .12rem;
+    border-radius: .1rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 0.06rem 0 rgba(255, 255, 255, 0.03); }
+    .movie-page-info .real-time-word-of-mouth .top {
+      width: 100%;
+      height: 0.17rem;
+      font-size: .12rem;
+      color: #fff;
+      vertical-align: top; }
+      .movie-page-info .real-time-word-of-mouth .top img {
+        width: 0.14rem;
+        height: 0.14rem;
+        vertical-align: top; }
+    .movie-page-info .real-time-word-of-mouth .middle {
+      width: 100%;
+      height: .8rem;
+      font-size: .44rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: .26rem;
+      color: #fff; }
+      .movie-page-info .real-time-word-of-mouth .middle .wangtoWatch {
+        color: #ffbb29; }
+    .movie-page-info .real-time-word-of-mouth .bottom {
+      width: 100%;
+      height: 0.28rem;
+      padding-top: 0.1rem;
+      font-size: .12rem;
+      color: #fff; }
+  .movie-page-info .real-time-word-of-mouth1 {
+    width: 100%;
+    height: 1.75rem;
+    margin-top: .15rem;
+    padding: .1rem .12rem;
+    border-radius: .1rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 0.06rem 0 rgba(255, 255, 255, 0.03); }
+    .movie-page-info .real-time-word-of-mouth1 .top {
+      width: 100%;
+      height: 0.17rem;
+      font-size: .12rem;
+      color: #fff;
+      vertical-align: top;
+      display: flex;
+      justify-content: space-between; }
+      .movie-page-info .real-time-word-of-mouth1 .top img {
+        width: 0.14rem;
+        height: 0.14rem;
+        vertical-align: top;
+        margin-right: .05rem; }
+      .movie-page-info .real-time-word-of-mouth1 .top .wantWatch {
+        opacity: .6; }
+    .movie-page-info .real-time-word-of-mouth1 .middle {
+      width: 100%;
+      height: 1.12rem;
+      font-size: .44rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: .26rem;
+      color: #fff; }
+      .movie-page-info .real-time-word-of-mouth1 .middle .left {
+        color: #ffbb29;
+        display: flex;
+        flex-direction: column; }
+        .movie-page-info .real-time-word-of-mouth1 .middle .left .people-grade {
+          font-size: .12rem;
+          opacity: .6;
+          color: #fff; }
+        .movie-page-info .real-time-word-of-mouth1 .middle .left .score {
+          font-size: .34rem;
+          text-align: center; }
+      .movie-page-info .real-time-word-of-mouth1 .middle .right {
+        margin-left: .4rem;
+        width: 1.75rem;
+        height: 0.72rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: .05rem; }
+        .movie-page-info .real-time-word-of-mouth1 .middle .right .star-percent-bar {
+          width: 1.73rem;
+          height: 0.15rem;
+          display: flex;
+          flex-direction: row; }
+          .movie-page-info .real-time-word-of-mouth1 .middle .right .star-percent-bar img {
+            width: 0.05rem;
+            height: 0.05rem;
+            margin-right: .01rem; }
+          .movie-page-info .real-time-word-of-mouth1 .middle .right .star-percent-bar .star {
+            width: 0.30rem;
+            height: 100%;
+            display: flex;
+            justify-content: flex-end;
+            margin-right: .05rem;
+            vertical-align: middle; }
+          .movie-page-info .real-time-word-of-mouth1 .middle .right .star-percent-bar .bar {
+            width: 0.9rem;
+            height: 0.05rem;
+            background-color: rgba(255, 255, 255, 0.05);
+            vertical-align: middle; }
+          .movie-page-info .real-time-word-of-mouth1 .middle .right .star-percent-bar .percent {
+            font-size: .08rem;
+            opacity: .6;
+            line-height: .1rem;
+            margin-left: .05rem;
+            vertical-align: middle; }
+    .movie-page-info .real-time-word-of-mouth1 .bottom {
+      width: 100%;
+      height: 0.28rem;
+      padding-top: 0.1rem;
+      font-size: .12rem;
+      color: #fff; }
+  .movie-page-info .movie-watching-tips {
+    width: 100%;
+    height: 0.51rem;
+    padding: .1rem 0; }
+    .movie-page-info .movie-watching-tips .tip {
+      padding: .05rem 0; }
+  .movie-page-info .brief-introduction {
+    padding: .16rem 0 0; }
+    .movie-page-info .brief-introduction .title {
+      display: flex;
+      justify-content: space-between; }
+    .movie-page-info .brief-introduction .shrink, .movie-page-info .brief-introduction .unfold {
+      font-size: .12rem;
+      opacity: 0.6;
+      display: none; }
+    .movie-page-info .brief-introduction .show {
+      display: inline-block; }
+    .movie-page-info .brief-introduction .content {
+      width: 100%;
+      margin: .07rem 0;
+      overflow: hidden; }
+  .movie-page-info .actors {
+    margin: .18rem 0 .15rem; }
+  .movie-page-info .videos-photos {
+    width: 100%;
+    height: 1.3rem;
+    margin-top: .18rem; }
+    .movie-page-info .videos-photos .title {
+      display: flex;
+      justify-content: space-between; }
+      .movie-page-info .videos-photos .title .allImg {
+        font-size: .12rem;
+        opacity: 0.6; }
+    .movie-page-info .videos-photos .swiper {
+      margin-top: .05rem;
+      width: 100%; }
+      .movie-page-info .videos-photos .swiper .swiper-container2 {
+        width: 100%;
+        height: 100%; }
+      .movie-page-info .videos-photos .swiper .swiper-slide {
+        text-align: center;
+        font-size: 14px;
+        /* background: #fff; */
+        width: 1.4rem !important;
+        height: 0.93rem;
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center; }
+        .movie-page-info .videos-photos .swiper .swiper-slide img {
+          width: 140px !important;
+          height: 93px; }
+
+.spaceCon {
+  width: 100%;
+  height: 0.2rem; }

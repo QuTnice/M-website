@@ -1,0 +1,10 @@
+    <div class="district">
+        {{each filterRes}}
+        <div class="district-li " data-id="{{$value.id}}">
+            {{$value.name}}({{$value.count}})
+        </div>
+        {{/each}}
+    </div>
+
+
+

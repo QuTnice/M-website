@@ -1,0 +1,83 @@
+{{each cinemaResult}}
+<div class="detailBox">
+    <div class="wrap">
+        <div class="detailImg">
+            <img src="{{$value.img.replace(/w\.h/,"71.100") }}" alt="">
+        </div>
+        <div class="detailContent">
+            <span class="nm">{{$value.nm}}</span>
+            <span class="enNm">{{$value.enm}}</span>
+            <span class="grade">
+                <span class="score">{{$value.sc}}</span>
+                <span class="sNum">(50.5万人评)</span>
+            </span>
+            <span class="kind">{{$value.cat}}</span>
+            <span class="area">{{$value.src}}</span>
+            <span class="time">{{$value.pubDesc}}</span>
+        </div>
+    </div>
+    <div class="detailArrow yo-ico">&#xe62d;</div>
+</div>
+{{/each}}
+<div class="cinemaList">
+    <div class="C-movie-Date">
+        <div class="swiper-container1">
+            <div class="swiper-wrapper " style="overflow: auto;">
+                <div class="swiper-slide swiper-page ">10月17日 周四</div>
+                <div class="swiper-slide swiper-page ">10月17日 周四</div>
+                <div class="swiper-slide swiper-page ">10月17日 周四</div>
+                <div class="swiper-slide swiper-page ">10月17日 周四</div>
+                <div class="swiper-slide swiper-page ">10月17日 周四</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div data-id="" data-to="Cinemadetail" class="wrap222">
+    <div class="cinema">
+        大地院线影城（珠江摩尔店）
+        <div class="prace">
+            <span class="number">38</span><span class="yuanFont">元</span><span class="qiFont">起</span>
+        </div>
+    </div>
+    <div class="addr">
+        <span class="position">昌平区回龙观镇北清路1号院7号楼内7-101-26</span>
+        <span class="distance">4km</span>
+    </div>
+    <div class="status">
+        <span class="blueBorder">退</span><span class="blueBorder">改签</span><span class="yellowBorder">小吃</span>
+    </div>
+    <span class="discountFont"></span>
+</div>
+<div data-id="" data-to="Cinemadetail" class="wrap222">
+    <div class="cinema">
+            中影国际影城（昌平永旺店）
+        <div class="prace">
+            <span class="number">38</span><span class="yuanFont">元</span><span class="qiFont">起</span>
+        </div>
+    </div>
+    <div class="addr">
+        <span class="position">昌平区北清路1号永旺国际商城3楼</span>
+        <span class="distance">4km</span>
+    </div>
+    <div class="status">
+        <span class="blueBorder">退</span><span class="blueBorder">改签</span><span class="yellowBorder">小吃</span>
+    </div>
+    <span class="discountFont"></span>
+</div>
+<div data-id="" data-to="Cinemadetail" class="wrap222">
+    <div class="cinema">
+            莱纳龙域影城
+        <div class="prace">
+            <span class="number">38</span><span class="yuanFont">元</span><span class="qiFont">起</span>
+        </div>
+    </div>
+    <div class="addr">
+        <span class="position">昌平区回龙观镇北清路1号院7号楼内7-101-26</span>
+        <span class="distance">4km</span>
+    </div>
+    <div class="status">
+        <span class="blueBorder">退</span><span class="blueBorder">改签</span><span class="yellowBorder">小吃</span>
+    </div>
+    <span class="discountFont"></span>
+</div>
+

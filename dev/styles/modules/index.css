@@ -1,0 +1,68 @@
+.index-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%; }
+  .index-container header {
+    display: flex;
+    height: .49rem;
+    background: #fff;
+    font-size: .18rem;
+    text-align: center;
+    line-height: .49rem;
+    justify-content: space-between;
+    color: #fff; }
+    .index-container header .i-city {
+      display: flex;
+      flex: 4;
+      width: 1.75rem;
+      height: .49rem;
+      text-align: left;
+      background-size: 25px;
+      background-repeat: no-repeat;
+      background-position: 15px;
+      background-image: url(//gw.alicdn.com/tfs/TB1mKkzl9zqK1RjSZFpXXakSXXa-50-50.svg);
+      padding-left: 50px; }
+    .index-container header .city-name {
+      display: flex;
+      width: auto;
+      height: .49rem;
+      color: #333;
+      font-weight: 700;
+      font-size: 16px; }
+    .index-container header .item-biaoti {
+      display: flex;
+      flex: 8;
+      width: 2.18rem; }
+      .index-container header .item-biaoti .tab-item {
+        width: auto;
+        padding: 0 .15rem;
+        height: .49rem;
+        color: #777;
+        font-weight: 700;
+        line-height: .49rem;
+        font-size: 16px; }
+      .index-container header .item-biaoti .active {
+        color: #ff2e62; }
+  .index-container main {
+    flex: 1;
+    overflow: auto; }
+  .index-container footer {
+    height: .54rem; }
+    .index-container footer ul {
+      height: 100%;
+      display: flex; }
+      .index-container footer ul li {
+        padding-top: 0.05rem;
+        flex: 1;
+        flex-direction: column;
+        background: #f6f6f6;
+        text-align: center;
+        font-size: .12rem;
+        display: flex;
+        color: #c2cfcc; }
+        .index-container footer ul li span {
+          font-size: .30rem;
+          line-height: .3rem; }
+        .index-container footer ul li.active {
+          background: #e7f3f0;
+          color: #ff4d64; }

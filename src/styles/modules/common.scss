@@ -1,0 +1,22 @@
+#root {
+  height: 100%;
+}
+html{
+  // font-size: 35.7vw;
+  font-size: 100px;
+  // @media screen and (max-height: 1000px) {
+  //   font-size: 26.7vw;
+  // }
+
+  // @media screen and (min-height: 1000px) {
+  //   font-size: 18.7vw;
+  // }
+
+  // font-family: "微软雅黑";
+}
+
+@font-face {
+  font-family: 'yofont';
+  src: url('../../assets/icons/iconfont.ttf') format('woff'),
+       url('../../assets/icons/iconfont.woff') format('truetype');
+}

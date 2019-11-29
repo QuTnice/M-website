@@ -1,0 +1,20 @@
+<div class="featureList">
+    <div class="special-content">
+        <div class="item-title">特色服务</div>
+        <div class="item-list item-list1">
+            {{each filterResult.service.subItems}}
+            <div class="item serviceBtn" data-id="{{$value.id}}" data-type="service">{{$value.name}}</div>
+            {{/each}}
+        </div>
+        <div class="item-title">特殊厅</div>
+        <div class="item-list">
+            {{each filterResult.hallType.subItems}}
+            <div class="item specialHall" data-id="{{$value.id}}" data-type="hallType">{{$value.name}}</div>
+            {{/each}}
+        </div>
+    </div>
+    <div class="special-btn">
+        <div class="resetBtn">重置</div>
+        <div class="affirmBtn">确认</div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<!-- <div>{{name}}</div> -->
+
+<div class="index-container">
+    <header>
+      
+    </header>
+    <main>
+      
+    </main>
+    <footer>
+      <ul>
+        <li data-to="movie" class="active"><span class="yo-ico">&#xe873;</span>热映</li>
+        <li data-to="cinema" ><span class="yo-ico">&#xe878;</span>影院</li>
+        <li data-to="mine" ><span class="yo-ico">&#xe87d;</span>我的</li>
+      </ul>
+    </footer>
+  </div>

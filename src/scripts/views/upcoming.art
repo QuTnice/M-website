@@ -1,0 +1,38 @@
+{{each timeArr}}
+<div class="movieComing">
+    <span class="comingDate">{{$value[0]}}</span>
+</div>
+{{each $value[1] vall}}
+<div class="m-item" data-id="{{vall.id}}">
+    <div class="m-info">
+        <div class="poster-c">
+            <img src="{{vall.img.replace(/w\.h/,"128.108") }}" alt="">
+        </div>
+        <div class="wrap">
+
+            <div class="m-info-content">
+                <div><span class="m-nm">{{vall.nm}}</span></div>
+                <div class="m-numF">
+                    <span class="m-num">26451</span>
+                    <span class="grayFont">人想看</span>
+                </div>
+                <div class="m-numF">
+                    <span class=" grayFont">主演：</span>
+                    <span class=" grayFont">章子怡 章子怡</span>
+                </div>
+                <div class="directorF m-numF">
+                    <span class="directorN grayFont">2019-10-17</span>
+                    <span class="director grayFont">上映</span>
+                </div>
+            </div>
+            <div class="btnWrap">
+                <div class="buttn">预售</div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+</div>
+{{/each}}
+{{/each}}
